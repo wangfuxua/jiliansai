@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*---------------------------------------content---------------------------------------*/
+#content{ width:948px; margin:0 auto; overflow:hidden; color:#6c6c6c;}
+.geren{ font-size:20px; color:#212F52; width:84px; height:34px; float:left; margin-top:28px; padding-left:3px; border-bottom:1px solid #D8271D;}
+.you{ width:861px; height:34px; float:left; border-bottom:1px solid #B2B2B2; margin-top:28px;}
+.xinxi{ width:866px; margin:0 auto; border-bottom:1px solid #999999; margin-top:88px; font-size:14px; color:#262c69; line-height:30px;}
+.chuan{ height:600px; margin-left:325px;}
+.touxiang{margin-left:-12px; font-size:16px; height:38px; margin-top:28px;}
+.touxiang-zi{ height:36px; width:42px; display:block; line-height:36px; float:left; }
+.touxiang-images{ float:left; cursor:pointer; border:1px solid  #CFCFCF;margin-left:16px; height:36px; width:100px;cursor: pointer;background:#EEEEEE;color: #666;text-align:center;line-height:34px; }
+.touxiang-images_1{ cursor:pointer; border:1px solid  #CFCFCF;margin-left:16px; height:36px; width:100px;cursor: pointer;background:#EEEEEE;color: #666;text-align:center;line-height:34px; }
+.yaoqiu{ color:#d4271f; display:inline-block; margin-left:45px; margin-top:14px;clear:both;}
+.photo{ clear:both; margin-left:46px; margin-top:14px;}
+.name{ margin-left:-12px; margin-top:14px; font-size:16px;}
+.name input{ width:242px; height:34px; border:1px solid #CFCFCF; padding-left:6px; font-size:14px; color:#999;line-height: 34px;}
+.red{font-size:12px; color:#c42117; margin-left:10px; line-height:28px; width:6px; height:34px; display:inline-block;}
+.xing{ color:#d4271f; margin-left:10px;}
+.wrong{ margin-left:10px; margin-bottom:-2px;}
+.zi{ color:#c42117; margin-left:10px; font-size:12px;}
+.sex{ margin-left:-12px; margin-top:14px; font-size:16px;}
+.sex1{ margin-left:20px;}
+.shouji{ font-size:16px;  margin-left:-12px; margin-top:14px;}
+.email{ font-size:16px;   margin-left:-12px; margin-top:10px;}
+.email input{ width:242px; height:34px; border:1px solid #CFCFCF; margin-left:2px;  padding-left:6px; font-size:14px; color:#999;line-height: 34px;}
+.email .zi{ font-size:12px;}
+/*button*/
+.zhuce1{font-family:"Î¢ÈíÑÅºÚ"; margin-left:48px; margin-top:20px; display:inline-block;  height:36px; width:86px; text-align:center; line-height:36px; background:#262C6A; color:#FFFFFF; border:none; font-size:16px; cursor:pointer;}
+.zhuce1:hover{color:#FFF;}
+
+
+
+
+.hezi{width:54px; height:34px; display:inline-block;line-height: 26px;}
+.baocun{ margin-left:46px; margin-top:16px; cursor:pointer;}
+.kongs{ width:34px; height:14px; display:inline-block;}
+.Validform_right{ width:158px; height:34px; display:inline-block; background:url(../../images/r-l.png) no-repeat 0px -30px; margin-left:14px; margin-top:5px; padding-left:15px; color:#1657c4; line-height:26px;}
+.Validform_wrong{ width:158px; height:34px; display:inline-block; background:url(../../images/r-l.png) no-repeat 14px 6px;font-size:12px; color:#c42117; margin-left:0px; margin-top:5px; padding-left:30px; line-height:26px;}

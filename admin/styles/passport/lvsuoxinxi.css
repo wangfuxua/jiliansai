@@ -1,0 +1,39 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*---------------------------------content--------------------------------*/
+#content{ width:948px; overflow:hidden; margin:0 auto; padding:0 0 20px 0;}
+.geren{ font-size:20px; color:#212F52; width:84px; height:34px; float:left; margin-top:28px; padding-left:3px; border-bottom:1px solid #D8271D;}
+.you{ width:861px; height:34px; float:left; border-bottom:1px solid #B2B2B2; margin-top:28px;}
+.xinxi{ width:866px; margin:0 auto; border-bottom:1px solid #999999; margin-top:88px; font-size:14px; color:#262c69;}
+.message{ width:700px; margin-left:200px; padding-top:30px; color:#6c6c6c;}
+.zhiyezheng{ font-size:16px; float:left;}
+.eg0{ width:144px; height:180px; float:left;}
+.eg{ width:122px; height:120px; float:left; background:#A5A5A5; margin-left:10px;}
+.touxiang-images{float: left;cursor: pointer;border: 1px solid #CFCFCF;margin-left: 10px; margin-top:10px;height: 34px;width: 119px;cursor: pointer;background: #EEEEEE;color: #666;text-align: center;line-height: 34px;}
+.eg1{ margin-top:9px; margin-left:7px;}
+.eg11{ color:#FFF; width:122px; display:inline-block; text-align:center; margin-top:10px;}
+.eg2{ width:122px; height:120px; float:left; background:#A5A5A5; margin-left:10px;}
+.chuan{ color:#c42117; margin-top:58px; margin-left:10px; float:left;}
+.chuan img{ margin-left:10px; margin-right:6px; margin-bottom:-2px;}
+.btn{ clear:both; margin-left:106px; margin-top:138px;}
+.btn input{ margin-right:25px;}
+.red{font-size:12px; color:#c42117; margin-left:10px; line-height:28px; width:6px; height:34px; display:inline-block;}
+.zi{ color:#d4271f; margin-left:106px; margin-top:6px;}
+.zhenghao{ font-size:16px; margin-left:26px; margin-top:16px;}
+.zhenghao input{ width:268px; height:34px; border:1px solid #CFCFCF; padding-left:6px; color:#999; font-size:14px;line-height: 34px;}
+.hao{ float:left; font-size:16px;}
+.xie{ color:#c42117; margin-left:10px; float:left; margin-top:20px; font-size:12px;}
+.xie img{ margin-left:10px; margin-right:6px; margin-bottom:-2px;}
+.chuanzhen{ margin-left:22px;}
+.kong2{ width:32px; height:10px; display:inline-block;}
+.no{ text-indent:0;}
+.btn2{ clear:both; margin-top:20px; margin-left:107px;}
+.hezi{width:80px; height:34px; display:inline-block;line-height: 26px;}
+/*button*/
+.zhuce1{ margin-left:5px; margin-top:20px;  height:36px; width:86px; text-align:center; line-height:36px; background:#262C6A; color:#FFFFFF; border:none; font-size:16px; cursor:pointer;}
+
+.kong{ margin-right:20px;}
+.kongs{ width:34px; height:14px; display:inline-block;}
+.Validform_right{ width:158px; height:34px; display:inline-block; background:url(../../images/r-l.png) no-repeat 0px -30px; font-size:12px; margin-left:14px; margin-top:5px; padding-left:15px; color:#1657c4; line-height:26px;}
+.Validform_wrong{ width:200px; height:34px; display:inline-block; background:url(../../images/r-l.png) no-repeat 14px 6px;font-size:12px; color:#c42117; margin-left:0px; margin-top:5px; padding-left:30px; line-height:26px;}

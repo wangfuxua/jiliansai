@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*----------------------------content-----------------------------------------------*/
+#content{ width:970px; margin:0 auto; color:#6c6c6c; overflow:hidden;}
+.lvshi{height:490px;width:467px;float:left;}
+.denglu{ width:470px; overflow:hidden; float:right; padding-left:30px;*padding-bottom:10px;}
+.yonghu{ width:414px; height:40px; line-height:40px; border-bottom:1px solid #999999; margin-top:67px; font-size:16px; color:#223053; font-weight:bold; }
+.zhanghao{ margin-top:38px; font-size:16px;}
+.kong{ width:16px; height:10px; display:inline-block;}
+.zhanghao input{ width:230px; height:34px; padding-left:6px; border:1px solid #CFCFCF; color:#999; font-size:14px;line-height:34px;}
+.qian{width:64px; height:34px; display:inline-block;line-height:26px;}
+.wrong{ margin-left:14px; margin-bottom:-2px;}
+.zi{ color:#C42217; margin-left:7px; font-size:12px;}
+.mima{ margin-top:15px; font-size:16px;}
+.mima input{width:230px; height:34px; padding-left:6px; border:1px solid #CFCFCF; color:#999;line-height:34px;}
+.yanzhengma{ margin-top:15px; font-size:16px;height:37px;line-height:34px;}
+.yanzhengma input{ width:134px; height:34px; border:1px solid #CFCFCF; padding-left:6px;color: #999;line-height:34px;}
+.yan{width: 86px; height: 36px;margin-bottom:-13px;margin-left:6px; *margin-bottom:-3px;}
+.ma{ margin-left:10px; margin-bottom:-13px;}
+.huan{ color:#1757C5; cursor:pointer; margin-left:220px; margin-top:3px; display:block;}
+/*button*/
+.zhuce1{ margin-left:104px; margin-top:20px;  height:36px; width:86px;display: inline-block; text-align:center; line-height:36px; background:#262C6A; color:#FFFFFF; border:none; font-size:16px; cursor:pointer;}
+.zhuce1:hover{color:#FFF;}
+.dl{ margin-left:98px; margin-top:16px;}
+.zc{ margin-left:17px; margin-top:16px;}
+.kongs{ width:34px; height:14px; display:inline-block;}
+.Validform_right{ width:158px; height:14px; display:inline-block; background:url(../../images/right-wrong.png) no-repeat bottom left; margin-left:70px; margin-top:5px; padding-left:15px; color:#1657c4; line-height:14px;}
+.Validform_wrong{ width:158px; height:14px; display:inline-block; background:url(../../images/right-wrong.png) no-repeat 14px 0px;font-size:12px; color:#c42117; margin-left:56px; margin-top:5px; padding-left:30px; line-height:14px;}
