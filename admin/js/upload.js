@@ -1,136 +1,4 @@
-jQuery(document).ready(function(){
-	if (!!check.html5) {
-		$("#btn_header1").uploadifive({
-			'fileObjName' : 'btn_header',
-			'buttonText' : '',
-			'buttonClass' : 'yzform14',
-			'width' : 107,
-			'height' : 36,
-			'fileSizeLimit' : '2MB',
-			'fileType' : 'image',
-			'itemTemplate' : '<div class="uploadifive-queue-item" style="display: none;"></div>',
-			// 'removeCompleted' : true,
-			'formData' : {
-			},
-			'uploadScript' : base_url + 'upload/throughupload',
-			'onInit' : function() {
-				$(".uploadifive-button").removeClass('uploadifive-button');
-			},
-			'onUploadComplete' : function(file, data) {
-                           
-				var d = eval("("+data+")");
-              
-			
-                                var u = base_url + d.path + "?" + Math.floor(Math.random()*9999+1000);
-                                $("#header_photo").attr("src", u);
-                                $("#shopimage").val(d.path);
-                                // viewDoctorPaper('f', d.url);
-				
-			},
-			'onError' : function(errorType) {
-				showDoctorError(errorType);
-			}
-		})
-	} else {
-		$("#btn_header1").uploadify({
-			// 'debug' : true,
-			'fileObjName' : 'btn_header',
-			'buttonText' : '',
-			'buttonClass' : 'yzform14',
-			'width' : 107,
-			'height' : 36,
-			'fileSizeLimit' : '2MB',
-			'fileTypeDesc' : 'Image Files',
-			'fileTypeExts' : ' *.jpg; *.png; *.jpeg',
-			'itemTemplate' : '<div class="uploadifive-queue-item" style="display: none;"></div>',
-			'formData' : {'uid' : uid},
-			'swf' : base_url + 'data/flash/uploadify.swf?var='+(new Date()).getTime(),
-			'uploader' : base_url + 'upload/throughupload',
-			'onInit' : function() {
-				$(".uploadify-button").removeClass('uploadify-button');
-			},
-			'onUploadSuccess' : function(file, data, response) {
-				var d = eval("("+data+")");
-				if (1 == d.status) {
-             
-					var u = base_url + d.path + "?" + Math.floor(Math.random()*9999+1000);
-					$("#header_photo").attr("src", u);
-				}
-			},
-			'onUploadError' : function(file, errorCode, errorMsg, errorString) {
-				showDoctorError(errorString);
-			}
-		});
-	}
-});
 
-
-
-jQuery(document).ready(function(){
-	if (!!check.html5) {
-		$("#btn_header2").uploadifive({
-			'fileObjName' : 'btn_header',
-			'buttonText' : '',
-			'buttonClass' : 'yzform14',
-			'width' : 107,
-			'height' : 36,
-			'fileSizeLimit' : '2MB',
-			'fileType' : 'image',
-			'itemTemplate' : '<div class="uploadifive-queue-item" style="display: none;"></div>',
-			// 'removeCompleted' : true,
-			'formData' : {
-			},
-			'uploadScript' : base_url + 'upload/throughupload',
-			'onInit' : function() {
-				$(".uploadifive-button").removeClass('uploadifive-button');
-			},
-			'onUploadComplete' : function(file, data) {
-                           
-				var d = eval("("+data+")");
-              
-			
-                                var u = base_url + d.path + "?" + Math.floor(Math.random()*9999+1000);
-                                $("#header_photo").attr("src", u);
-                                $("#oneimg").val(d.path);
-                                // viewDoctorPaper('f', d.url);
-				
-			},
-			'onError' : function(errorType) {
-				showDoctorError(errorType);
-			}
-		})
-	} else {
-		$("#btn_header2").uploadify({
-			// 'debug' : true,
-			'fileObjName' : 'btn_header',
-			'buttonText' : '',
-			'buttonClass' : 'yzform14',
-			'width' : 107,
-			'height' : 36,
-			'fileSizeLimit' : '2MB',
-			'fileTypeDesc' : 'Image Files',
-			'fileTypeExts' : ' *.jpg; *.png; *.jpeg',
-			'itemTemplate' : '<div class="uploadifive-queue-item" style="display: none;"></div>',
-			'formData' : {'uid' : uid},
-			'swf' : base_url + 'data/flash/uploadify.swf?var='+(new Date()).getTime(),
-			'uploader' : base_url + 'upload/throughupload',
-			'onInit' : function() {
-				$(".uploadify-button").removeClass('uploadify-button');
-			},
-			'onUploadSuccess' : function(file, data, response) {
-				var d = eval("("+data+")");
-				if (1 == d.status) {
-             
-					var u = base_url + d.path + "?" + Math.floor(Math.random()*9999+1000);
-					$("#header_photo").attr("src", u);
-				}
-			},
-			'onUploadError' : function(file, errorCode, errorMsg, errorString) {
-				showDoctorError(errorString);
-			}
-		});
-	}
-});
 jQuery(document).ready(function(){
 	if (!!check.html5) {
 		$("#btn_header3").uploadifive({
@@ -140,27 +8,28 @@ jQuery(document).ready(function(){
 			'width' : 107,
 			'height' : 36,
 			'fileSizeLimit' : '2MB',
-			'fileType' : 'image',
+            'fileType' : 'image',
 			'itemTemplate' : '<div class="uploadifive-queue-item" style="display: none;"></div>',
 			// 'removeCompleted' : true,
 			'formData' : {
 			},
-			'uploadScript' : base_url + 'upload/throughupload',
+			'uploadScript' : base_url + 'upload/Upload',
 			'onInit' : function() {
 				$(".uploadifive-button").removeClass('uploadifive-button');
 			},
 			'onUploadComplete' : function(file, data) {
                            
 				var d = eval("("+data+")");
-              
-			
+
                                 var u = base_url + d.path + "?" + Math.floor(Math.random()*9999+1000);
-                                $("#header_photo1").attr("src", u);
-                                $("#twoimg").val(d.path);
+
+                                $("#header_photo").attr("src", u);
+                                $("#logo").val(d.path);
                                 // viewDoctorPaper('f', d.url);
 				
 			},
 			'onError' : function(errorType) {
+
 				showDoctorError(errorType);
 			}
 		})
@@ -176,9 +45,9 @@ jQuery(document).ready(function(){
 			'fileTypeDesc' : 'Image Files',
 			'fileTypeExts' : ' *.jpg; *.png; *.jpeg',
 			'itemTemplate' : '<div class="uploadifive-queue-item" style="display: none;"></div>',
-			'formData' : {'uid' : uid},
+			'formData' :{},
 			'swf' : base_url + 'data/flash/uploadify.swf?var='+(new Date()).getTime(),
-			'uploader' : base_url + 'upload/throughupload',
+			'uploader' : base_url + 'upload/Upload',
 			'onInit' : function() {
 				$(".uploadify-button").removeClass('uploadify-button');
 			},
@@ -187,10 +56,12 @@ jQuery(document).ready(function(){
 				if (1 == d.status) {
              
 					var u = base_url + d.path + "?" + Math.floor(Math.random()*9999+1000);
-					$("#header_photo1").attr("src", u);
+					$("#header_photo").attr("src", u);
+                    $("#logo").val(d.path);
 				}
 			},
 			'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+
 				showDoctorError(errorString);
 			}
 		});

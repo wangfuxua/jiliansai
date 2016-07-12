@@ -44,16 +44,20 @@
                     <th class="hidden-480 sorting" role="columnheader" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" style="width: 240px;" aria-label="Engine version: activate to sort column ascending">操作</th>
                 </thead>
                 <tbody role="alert" aria-live="polite" aria-relevant="all">
+                <?php if(!empty($data)):?>
+                <?php foreach($data as $v):?>
                 <tr class="odd">
-                    <td class=" "><span class="">1</span></td>
-                    <td class=" sorting_1">Gecko31</td>
-                    <td class=" ">Firefox 1.0</td>
-                    <td class="hidden-480 ">Win 98+ / OSX.2+</td>
-                    <td class="hidden-480 ">1.7</td>
+                    <td class=" "><span class=""><?php echo $v->id?></span></td>
+                    <td class=" sorting_1"><?php echo $v->name?></td>
+                    <td class=" "><?php echo $v->intr?></td>
+                    <td class="hidden-480 "><?php echo $v->status?></td>
+                    <td class="hidden-480 ">cha</td>
                 </tr>
+                <?php endforeach;?>
+                <?php endif;?>
                </tbody></table>
             <div class="row-fluid"><div class="span6">
-                    <div class="dataTables_info" id="sample_1_info">Showing 1 to 10 of 43 entries</div>
+
                 </div>
                 <div class="span6">
                     <div class="row-fluid">

@@ -40,7 +40,7 @@ class PassportController extends CommonController{
         $user->password=$password;
         $r=$user->GoLogin();
         if($r){
-            Yii::app()->user->id=$r['id']
+            Yii::app()->user->id=$r['id'];
         }else{
             $this->renderPartial('login',$data);
         }
