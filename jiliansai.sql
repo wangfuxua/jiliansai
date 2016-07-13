@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2016-07-13 19:17:24
+Date: 2016-07-13 20:12:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `jls_admin_colmns` (
   `url` varchar(120) NOT NULL COMMENT '链接',
   `timeline` int(12) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_admin_colmns
@@ -40,6 +40,10 @@ INSERT INTO `jls_admin_colmns` VALUES ('3', '2', '1', '1', 'item', '项目添加
 INSERT INTO `jls_admin_colmns` VALUES ('4', '1', '0', '1', 'news', '新闻中心', '0', '0');
 INSERT INTO `jls_admin_colmns` VALUES ('5', '2', '4', '1', 'news', '新闻列表', 'news/list', '0');
 INSERT INTO `jls_admin_colmns` VALUES ('6', '2', '4', '1', 'news', '添加新闻', 'news/addnews', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('7', '1', '0', '1', 'channel', '合作管理', '#', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('8', '2', '7', '1', 'channel', '赞助管理', 'channel/zanzhu', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('9', '2', '7', '1', 'channel', '合作方管理', 'channel/hezuofang', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('10', '2', '7', '1', 'channel', '合作媒体管理', 'channel/meiti', '0');
 
 -- ----------------------------
 -- Table structure for jls_admin_users
@@ -191,11 +195,12 @@ CREATE TABLE `jls_news` (
   `cln_id` int(11) NOT NULL COMMENT '所属栏目',
   `timeline` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_news
 -- ----------------------------
+INSERT INTO `jls_news` VALUES ('1', 'ceshi', 'dsadasd', '<p>adasdasdas<br/></p>', '2', '1468410272');
 
 -- ----------------------------
 -- Table structure for jls_pnums

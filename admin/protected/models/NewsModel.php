@@ -16,12 +16,23 @@ class NewsModel extends CommonModel{
      * 获取所有新闻信息
      * */
     function GetNews($clnid=0){
-        $new=new Dtable('news');
         $criteria = new CDbCriteria;
+        $new=new Dtable('news');
+        $num=$new->count();
         if($clnid){
             $criteria->addCondition('cln_id='.$clnid);
         }
-        return $new->findAll($criteria);
+        $page=new CPagination($num);
+        $page->pageSize=20;//每页数量
+        $page->applyLimit($criteria);
+        $criteria->limit=$page->pageSize;
+        $criteria->offset=$page->currentPage*$page->pageSize;
+        $dd= $new->findAll($criteria);
+           foreach($dd as $k=>$v){
+               $dd[$k]['cln_id']=$this->GetTname($v['cln_id']);
+           }
+        return array('data'=>$dd,'page'=>$page);
+
     }
     /*
      * 添加新闻
@@ -36,6 +47,15 @@ class NewsModel extends CommonModel{
         return $new->save();
     }
 
+
+    /*
+     * 获取文章所属栏目
+     * */
+    function GetTname($id){
+$sql="select name from `jls_colmns` where id=".$id;
+        $r=Yii::app()->db->createCommand($sql)->queryRow();
+        return $r['name'];
+    }
 }
 
 
