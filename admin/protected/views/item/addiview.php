@@ -158,11 +158,3 @@
 </div>
 
 <script src="/media/js/form-fileupload.js"></script>
-
-<script>
-    jQuery(document).ready(function() {
-        // initiate layout and plugins
-        App.init();
-        FormFileUpload.init();
-    });
-</script>

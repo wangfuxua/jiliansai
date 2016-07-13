@@ -35,14 +35,18 @@ class PassportController extends CommonController{
             $data['errormsg']=Yii::app()->request->getParam('errormsg');;
             $this->renderPartial('login',$data);
     }
+
         $user=new UsersModel();
+
         $user->username=$username;
         $user->password=$password;
         $r=$user->GoLogin();
+
         if($r){
             Yii::app()->user->id=$r['id'];
+            $this->redirect('/index/index');
         }else{
-            $this->renderPartial('login',$data);
+            $this->redirect('/passport/Login');
         }
     }
   public  function actionLogout(){

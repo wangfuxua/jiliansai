@@ -268,7 +268,7 @@
 						
 						<li class="divider"></li>-->
 						
-						<li><a href="<?php echo base_url() ?>/channel/safe"><i class="icon-lock"></i> 修改密码</a></li>
+						<li><a href=""><i class="icon-lock"></i> 修改密码</a></li>
 						<li><a href="<?php echo base_url() ?>passport/logout?logout=1"><i class="icon-key"></i> 安全退出</a></li>
 
 						</ul>
@@ -321,7 +321,7 @@
 
 						<div class="input-box">
 
-							<a href="<?php echo base_url() ?>javascript:;" class="remove"></a>
+							<a href="<?php echo base_url('index/index') ?>javascript:;" class="remove"></a>
 
 							<input type="text" placeholder="Search..." />
 
@@ -337,7 +337,7 @@
 
 				<li class="start ">
 
-					<a href="<?php echo base_url() ?>">
+					<a href="<?php echo base_url('index/index') ?>">
 
 					<i class="icon-home"></i> 
 
@@ -349,76 +349,38 @@
 
  
 
+                <?php
+                $sql="select * from `jls_admin_colmns` where fid=0";
+                $data=Yii::app()->db->createCommand($sql)->queryAll();
 
-				<li class="<?php $id=$name = Yii::app()->controller->id; if($id=='channel'){echo 'active';}?>">
+                ?>
+                <?php foreach($data as $v):?>
+				<li class="<?php $id=$name = Yii::app()->controller->id; if($id==$v['cls_name']){echo 'active';}?>">
 					<a href="javascript:;">
 						<i class="icon-cogs"></i> 
-						<span class="title">项目管理</span>
+						<span class="title"><?php echo $v['name']?></span>
 						<span class="selected"></span>
 						<span class="arrow open"></span>
 					</a>
 
 					<ul class="sub-menu">
+                        <?php
+                        $sql="select * from `jls_admin_colmns` where fid=".$v['id'];
+                        $data1=Yii::app()->db->createCommand($sql)->queryAll();
 
+                        ?>
+                    <?php foreach($data1 as $v):?>
 						<li class="">
-							<a href="<?php echo base_url('item/ItemList')?>">
-                                项目列表
+							<a href="<?php echo base_url($v['url'])?>">
+                                <?php echo $v['name']?>
 							</a>
 						</li>
-                        <li class="">
-                            <a href="<?php echo base_url('item/additem')?>">
-                                项目添加
-                            </a>
-                        </li>
+                    <?php endforeach;?>
+
 					</ul>
 				</li>
-                <li class=" <?php $id=$name = Yii::app()->controller->id; if($id=='store'){echo 'active';}?>">
-                    <a href="javascript:;">
-                        <i class="icon-cogs"></i>
-                        <span class="title">门店管理</span>
-                        <span class="selected"></span>
-                        <span class="arrow open"></span>
-                    </a>
+                <?php endforeach;?>
 
-                    <ul class="sub-menu">
-
-                        <li class="">
-                            <a href="<?php echo base_url('store/list')?>">
-                                门店列表
-                            </a>
-                        </li>
-
-                        <li class="">
-                            <a href="<?php echo base_url('store/GetSweep')?>">
-                                扫码统计
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="<?php echo base_url('store/GetWinning')?>">
-                                抽奖统计
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
-                <li class=" <?php $id=$name = Yii::app()->controller->id; if($id=='luckydraw'){echo 'active';}?>">
-                    <a href="javascript:;">
-                        <i class="icon-cogs"></i>
-                        <span class="title">抽奖管理</span>
-                        <span class="selected"></span>
-                        <span class="arrow open"></span>
-                    </a>
-
-                    <ul class="sub-menu">
-
-                        <li class="">
-                            <a href="<?php echo base_url('Luckydraw/Addgold')?>">
-                                添加金子
-                            </a>
-                        </li>
-
-                    </ul>
-                </li>
 			</ul>
 
 			<!-- END SIDEBAR MENU -->
@@ -465,7 +427,7 @@
 
 		<div class="footer-inner">
 
-			2015 &copy; 季联赛
+			2016 &copy; 季联赛
 
 		</div>
 
