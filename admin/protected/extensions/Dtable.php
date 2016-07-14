@@ -16,7 +16,7 @@
 
     }
      public static  function Model($tableName=''){
-         self::$tableName=$this->prefix.$tableName;
+         self::$tableName='jls_'.$tableName;
          return parent::model(__CLASS__);
      }
      public function tableName(){
