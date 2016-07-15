@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2016-07-13 20:12:08
+Date: 2016-07-15 17:47:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `jls_admin_colmns` (
   `url` varchar(120) NOT NULL COMMENT '链接',
   `timeline` int(12) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_admin_colmns
@@ -44,6 +44,7 @@ INSERT INTO `jls_admin_colmns` VALUES ('7', '1', '0', '1', 'channel', '合作管
 INSERT INTO `jls_admin_colmns` VALUES ('8', '2', '7', '1', 'channel', '赞助管理', 'channel/zanzhu', '0');
 INSERT INTO `jls_admin_colmns` VALUES ('9', '2', '7', '1', 'channel', '合作方管理', 'channel/hezuofang', '0');
 INSERT INTO `jls_admin_colmns` VALUES ('10', '2', '7', '1', 'channel', '合作媒体管理', 'channel/meiti', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('11', '2', '7', '1', 'channel', '添加合作', 'channel/addChannel', '0');
 
 -- ----------------------------
 -- Table structure for jls_admin_users
@@ -72,6 +73,7 @@ DROP TABLE IF EXISTS `jls_channels`;
 CREATE TABLE `jls_channels` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '0' COMMENT '合作名称',
+  `logo` varchar(255) NOT NULL,
   `url` varchar(255) NOT NULL DEFAULT '0' COMMENT '合作链接',
   `cln_id` int(11) NOT NULL DEFAULT '0',
   `desc` varchar(255) NOT NULL COMMENT '介绍',
@@ -79,11 +81,14 @@ CREATE TABLE `jls_channels` (
   `status` int(11) NOT NULL DEFAULT '1' COMMENT '是否显示',
   `timeline` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_channels
 -- ----------------------------
+INSERT INTO `jls_channels` VALUES ('2', '周哈气', 'attachment/game/head/16/07/20160714175315488.jpg', 'www.baidu.com', '4', 'dasdasdasdas', '1', '0', '1468490145');
+INSERT INTO `jls_channels` VALUES ('3', '周哈气', 'attachment/game/head/16/07/20160714175315488.jpg', 'www.baidu.com', '4', 'dasdasdasdas', '1', '0', '1468490365');
+INSERT INTO `jls_channels` VALUES ('4', '王福旭', 'attachment/game/head/16/07/20160714175947849.jpg', 'www.baidu.com', '4', 'dasdasdasdasd', '1', '1', '1468490391');
 
 -- ----------------------------
 -- Table structure for jls_colmns
@@ -96,13 +101,17 @@ CREATE TABLE `jls_colmns` (
   `status` int(11) NOT NULL DEFAULT '1' COMMENT '状态',
   `timeline` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_colmns
 -- ----------------------------
 INSERT INTO `jls_colmns` VALUES ('1', '0', '新闻中心', '1', '0');
 INSERT INTO `jls_colmns` VALUES ('2', '1', '战报', '1', '0');
+INSERT INTO `jls_colmns` VALUES ('3', '0', '合作中心', '0', '0');
+INSERT INTO `jls_colmns` VALUES ('4', '3', '全程赞助', '1', '0');
+INSERT INTO `jls_colmns` VALUES ('5', '3', '合作方', '1', '0');
+INSERT INTO `jls_colmns` VALUES ('6', '3', '合作媒体', '1', '0');
 
 -- ----------------------------
 -- Table structure for jls_fights
