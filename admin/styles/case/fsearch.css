@@ -1,0 +1,75 @@
+@charset "utf-8";
+/* CSS Document */
+/*09071740 yf 修改字体*/
+.div{ font-size:14px; font-family:Arial, Helvetica, sans-serif; line-height:22px;}
+
+* { margin:0; padding:0; }
+a { color:#B5D0EB; text-decoration:none; }
+a:hover {color:#000; text-decoration:none; }
+body { margin:0; padding:0 0 0 0; font-size:12px; font-family:"微软雅黑", "Arial Narrow"; background-image:none; background-color:#fff; color:#B5D0EB;}
+form, ul, li, p, h1, h2, h3, h4, h5, h6, input { margin:0; padding:0; }
+input, select { font-size:12px; }
+img { border:0; }
+ul, li { list-style-type:none; }
+.clear { clear:both; }
+.hidden { display:none; }
+
+
+
+
+
+/* 找律师*/
+.search_l_up2{ color:#262C69; font-size:20px;font-family:"微软雅黑"; border-bottom:2px #B2B2B2 solid; padding:11px 0px 8px 0px;}
+.search_r2{ float:right; width:273px; border:2px solid #262C6A; padding:28px 21px 19px 18px; margin-left:15px; background-color:#FAFAFA;}
+.search_phone{ width:277px; height:117px; margin-bottom:5px;}
+.search_ask{ width:277px; height:117px;}
+.seach_law{width:613px;}
+.h_2{ height:249px; overflow:hidden;}
+
+/* 找律师列表页*/
+.seach_list{width:980px; margin:0px auto 0 auto;}
+.seach_list_l{ float:left; width:708px; margin-right:10px; }
+.search_list_l_down{ border:1px solid #C5C5C5; width:706px; margin-top:11px;}
+.search_list_n{ padding:18px 0px 12px 17px; background:url(../images/search_list.jpg) no-repeat 17px bottom;}
+.on_bg{ padding:18px 0px 12px 17px; background:#E6EFFF;}
+.on_bg2{ padding:18px 0px 12px 17px; background:url(../images/search_list.jpg) no-repeat 17px bottom;}
+.search_con3_l{ float:left;padding:0px 15px 0px 0px; margin:0px 16px 10px 0px; }
+.search_con3_l_l_up{width:125px; height:136px; margin-bottom:4px;}
+.search_con3_l_l_m{ margin-bottom:6px; text-align:center;width:125px;}
+.search_con3_l_l_down{ color:#1657C4;font-family:"微软雅黑"; font-size:12px; text-align:center;width:125px;}
+.search_con3_l_l{float:left; margin-right:15px;}
+.search_con3_l_r_l{font-family:"微软雅黑"; font-size:12px;}
+.search_con3_l_r_t{ float:left; color:#5D5D5D;}
+.search_con3_l_r_b{ float:left; width:465px;color:#8C8C8C;}
+.search_con3_l_r_t2{ float:left;color:#5D5D5D; width:85px;}
+.search_con3_l_r_b2{ float:left; width:440px;color:#8C8C8C;}
+.search_con3_l_r{ width:525px;float:left;font-family:"微软雅黑"; font-size:12px; color:#7A7A7A; line-height:20px;}
+.search_con3_l_r_name{ color:#1856C5;font-family:"微软雅黑"; font-size:14px;}
+.search2_l{display:block; padding:0px 15px 35px 15px; border:3px solid #C42117; }
+.search_list_page{margin:25px auto 30px auto;width:350px; display:block;}
+.search_list_button{ float:left; margin-right:45px;}
+.search_list_button2{ float:right;}
+.search_list_page2{ float:left; height:25px; line-height:25px; font-size:14px;color:#949494}
+.search_list_page2 a{ color:#949494;}
+.search_list_page2 a:hover{ color:#C42117;}
+.seach_list_r{ float:left;border:1px solid #C5C5C5; padding:15px 10px 5px 11px;}
+.seach_list_r_up_mp_l{ float:left; width:81px; margin-right:10px;}
+.seach_list_r_up_mp_r{ float:left;}
+.seach_list_r_up_mp_r_name{font-family:"微软雅黑"; font-size:12px;color:#5D5D5D;line-height:18px; margin-bottom:4px;}
+.seach_list_r_up_mp_r_up{ width:125px;margin-bottom:4px;}
+.seach_list_r_up_mp_r_down{ color:#1657C4;font-family:"微软雅黑"; font-size:12px;width:125px;line-height:18px;}
+.seach_list_r_up_aj{ padding-top:12px; height:48px;* padding-top:0px;}
+.seach_list_r_up_upload{ float:left; border-right:1px solid #C5C5C5; width:112px; text-align:center;}
+.seach_list_r_up_collect{ float:left; width:123px; text-align:center;}
+.seach_list_r_up_upload_up{font-family:"微软雅黑"; font-size:14px; color:#DD4039; margin-bottom:15px;}
+.seach_list_r_up_upload_down{font-family:"微软雅黑"; font-size:12px; color:#5D5D5D;}
+.seach_list_r_up{ border-bottom:1px solid #C5C5C5; padding-bottom:17px;}
+.seach_list_r_down_up_l{ float:left;font-family:"微软雅黑"; font-size:18px; color:#333333; font-weight:bold;}
+.seach_list_r_down_up_r{ float:right; width:15px; margin-top:5px;}
+.seach_list_r_down{ padding-top:20px;}
+.seach_list_r_up_mp2{ padding:14px 0px 13px 0px; border-bottom:1px dashed #C5C5C5;}
+.seach_list_r_up_mp3{ padding:14px 0px 13px 0px; border-bottom:none;}
+
+.search_con3_l_r_ll{font-family:"微软雅黑"; font-size:12px;color:#5D5D5D;}
+.search_con3_l_r_tt{ float:left; color:#5D5D5D;width:40px;}
+.search_con3_l_r_bb{ float:left; width:100px;color:#8C8C8C;}

@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+/*09071740 yf 修改字体*/
+.div{ font-size:14px; font-family:Arial, Helvetica, sans-serif; line-height:22px;}
+
+* { margin:0; padding:0; }
+a { color:#B5D0EB; text-decoration:none; }
+a:hover {color:#000; text-decoration:none; }
+body { margin:0; padding:0 0 0 0; font-size:12px; font-family:"微软雅黑", "Arial Narrow"; background:url(../../images/houtai_bj.jpg);color:#333333;}
+form, ul, li, p, h1, h2, h3, h4, h5, h6, input { margin:0; padding:0; }
+input, select { font-size:12px; }
+img { border:0; }
+ul, li { list-style-type:none; }
+.clear { clear:both; }
+.hidden { display:none; }
+
+/*----------------------------content-----------------------------------------------*/
+.logo_houtai{ width:180px; height:98px;margin:0 auto 5px auto;}
+.represent{ width:386px; font-size:30px; color:#878787;margin:0 auto;}
+.houtai{ width:1000px; margin:0px auto 0px auto; color:#6c6c6c; padding-top:210px; }
+
+.denglu{ width:310px; margin:0 auto; }
+.yonghu{ width:310px; height:40px; line-height:40px; border-bottom:1px solid #999999; margin-top:67px; font-size:16px; color:#223053; font-weight:bold; }
+.zhanghao{ margin-top:38px; font-size:16px;}
+.qian {float:left; width: 64px;height: 34px;display: inline-block;line-height: 26px; padding-top:3px;}
+.kong{ width:16px; height:10px; display:inline-block;}
+.zhanghao input{ width:230px; height:34px; padding-left:6px; border:1px solid #CFCFCF; color:#999; font-size:14px; line-height:34px;}
+.wrong{ margin-left:14px; margin-bottom:-2px;}
+.zi{ color:#C42217; margin-left:7px; font-size:12px;}
+.mima{ margin-top:16px; font-size:16px;}
+.mima input{width:230px; height:34px; padding-left:6px; border:1px solid #CFCFCF; color:#999;line-height:34px;}
+.yanzhengma{margin-top: 16px;font-size: 16px;height: 37px;line-height: 34px;}
+.yanzhengma input{float:left; width:128px; height:39px; border:1px solid #CFCFCF;line-height:39px; padding-left:6px;}
+.ma{width: 86px;height: 36px;margin-bottom: -13px;margin-left: 6px;}
+.huan{ color: #1757C5;cursor: pointer; margin-left: 215px;margin-top: 3px;display: block;}
+/*button*/
+.zhuce1{ margin-left:80px; margin-top:20px;  height:36px; width:86px; text-align:center; line-height:36px; background:#262C6A; color:#FFFFFF; border:none; font-size:16px; cursor:pointer;}
+.dl{ margin-left:98px; margin-top:16px;}
+.zc{ margin-left:17px; margin-top:16px;}
+.Validform_right{ width:158px; height:14px; display:inline-block; background:url(images/right-wrong.png) no-repeat bottom left; margin-left:70px; margin-top:5px; padding-left:40px; color:#1657c4; line-height:14px;}
+.Validform_wrong{ width:158px; height:14px; display:inline-block; background:url(images/right-wrong.png) no-repeat 14px 0px;font-size:12px; color:#c42117; margin-left:56px; margin-top:5px; padding-left:30px; line-height:14px;}
+

@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*---------------------------------------content------------------------------------*/
+#content{ width:948px; overflow:hidden; margin:0 auto;color: #6c6c6c;}
+.geren{ font-size:20px; color:#212F52; width:84px; height:34px; float:left; margin-top:28px; padding-left:3px; border-bottom:1px solid #D8271D;}
+.you{ width:861px; height:34px; float:left; border-bottom:1px solid #B2B2B2; margin-top:28px;}
+.xinxi{ width:866px; margin:0 auto; border-bottom:1px solid #999999; margin-top:88px; font-size:14px; color:#262c69;}
+.qiye{ width:534px; margin:0 auto;}
+.logo-1{font-size:14px; margin-top:28px;font-size: 16px;color: #6c6c6c;}
+.logo-zi{float:left;line-height: 36px;}
+.logo-2{margin-left:85px;}
+.touxiang-images{ float:left; cursor:pointer; border:1px solid  #CFCFCF;margin-left:4px; height:36px; width:100px;cursor: pointer;background:#EEEEEE;color: #666;text-align:center;line-height:34px; }
+.yaoqiu{margin-left:85px;clear:both;margin-top: 14px;display: inline-block;margin-bottom: 14px;font-size:12px; color:#c42117;}
+.quancheng{margin-top: 14px;font-size: 16px;}
+.hezi{width:80px; height:34px; display:inline-block;line-height: 26px;}
+
+.quancheng input{width: 242px;height: 34px;border: 1px solid #CFCFCF;padding-left: 6px;font-size: 14px;color: #999;line-height: 34px;}
+.kuai{width:14px;height:10px;display: inline-block;}
+.sex{margin-top: 14px;font-size: 16px;;}
+.kong6{ width:40px; height:10px;display: inline-block}
+.shouji{margin-top: 14px;font-size: 16px;}
+.email{margin-top: 14px;font-size: 16px;}
+.email input{width: 242px;height: 34px;border: 1px solid #CFCFCF;padding-left: 6px;font-size: 14px;color: #999;line-height: 34px;}
+.dizhi{margin-top: 14px;font-size: 16px;}
+.dizhi input{width: 242px;height: 34px;border: 1px solid #CFCFCF;padding-left: 6px;font-size: 14px;color: #999;line-height: 34px;}
+a.wancheng{font-family: "Î¢ÈíÑÅºÚ";display: inline-block;text-align: center;margin-left: 82px;margin-top: 20px;height: 36px;width: 86px;line-height: 36px;background: #262C6A;color: #FFFFFF;border: none;font-size: 16px;margin-bottom: 20px;cursor: pointer;}
+
+
+
+.message{ width:740px; overflow:hidden; margin-left:140px; margin-top:24px; margin-bottom:40px;}
+.time{ font-size:16px; position:relative;  line-height:36px;}
+.time select{color:#999999; width:244px; height:36px; float:left;font-size:14px; padding-top:6px;}
+.jdown{ position:absolute; left:292px; top:0px;}
+.time option{ font-size:16px;}
+.zi{ float:left; line-height:36px; color:#666666;}
+.xing{ float:left; color:#c42117; margin-left:10px; margin-top:8px;}
+.jieshao{font-size:16px; clear:both; padding-top:10px;}
+.jieshao textarea{ width:492px; height:202px; padding:4px; color: #666666; font-size:14px;}
+.zi1{ float:left; line-height:20px; color:#666666;}
+textarea{ border:1px solid #CFCFCF; float:left;}
+.jieshao1{ color:#c42117; -webkit-float:left; margin-top:158px;-moz-float:left; font-size:12px;}
+.jieshao1 span{ margin-left:10px; }
+.jieshao1 img{ margin-left:10px; margin-right:10px; margin-bottom:-2px;}
+.jieshao b{ clear:both; font-size:12px; margin-left:82px; margin-top:10px;}
+.red{font-size:12px; color:#c42117; margin-left:10px; line-height:28px; width:6px; height:34px; display:inline-block;}
+.blue{ color:#1657c4; margin-left:20px;}
+.message h3{ font-size:20px; height:20px; width:630px; margin-top:20px; color:#444444; display:inline-block;}
+.lingyu{ font-size:16px; color:#666666; padding-top:28px; position:relative;}
+.jdown1{ position:absolute; left:408px; top:28px;}
+.lingyu select{ width:356px; height:36px; border:1px solid #CFCFCF; font-size:14px; color:#999999; padding-top:4px; }
+.kong{ margin-left:10px;}
+.xia{ margin-bottom:-2px;}
+.jigou{ font-size:16px; color:#666666; padding-top:10px;}
+.jigou input{ width:350px; height:34px; border:1px solid #CFCFCF; padding-left:6px;}
+.zhu{ color:#c42117; font-size:12px; margin-left:80px; margin-top:4px;}
+.xuan{ color:999999; font-size:14px; margin-left:77px; line-height:26px;}
+.xuan span{ color:#1657c4; font-size:12px; margin-left:72px; cursor:pointer;}
+.btn{ margin-left:78px; margin-top:28px;}
+.btn input{ margin-right:58px;}
+/*button*/
+.zhuce1{ margin-left:80px; margin-top:20px;  height:36px; width:86px; text-align:center; line-height:36px; background:#262C6A; color:#FFFFFF; border:none; font-size:16px; cursor:pointer;}
+
+.kongs{ width:34px; height:14px; display:inline-block;}
+.Validform_right{ width:200px; height:16px; display:inline-block; background:url(../../images/right-wrong.png) no-repeat 14px -14px;font-size:12px;  color:#c42117;line-height:14px; margin-left:10px;}
+.Validform_wrong{ width:138px; height:16px; display:inline-block; background:url(../../images/right-wrong.png) no-repeat 14px 2px;font-size:12px; color:#c42117; margin-left:10px; line-height:14px;}
+.shang{margin-top:157px;}
+
+
+.kongs{ width:34px; height:14px; display:inline-block;}
+.Validform_right{ width:158px;height:34px; display:inline-block; background:url(../../images/r-l.png) no-repeat 0px -30px; margin-left:14px; margin-top:5px; padding-left:15px; color:#1657c4; line-height:26px;}
+.Validform_wrong{ width:158px; height:34px; display:inline-block; background:url(../../images/r-l.png) no-repeat 14px 6px;font-size:12px; color:#c42117; margin-left:0px; margin-top:5px; padding-left:30px; line-height:26px;}

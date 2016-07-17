@@ -1,0 +1,25 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*-----------------------------content--------------------------------------------*/
+#content{ width:948px; height:500px; margin:0 auto;}
+.zhuce{ width:50px; color:#262c69; border-bottom:1px solid #D8271D; float:left;margin-top:30px; font-size:16px; font-weight:bold; margin-bottom:40px;}
+.you{ width:898px; float:left; height:0; border-bottom:1px solid #B7B7B7; margin-top:52px; margin-bottom:40px;}
+.zhucebiao{ width:700px; height:350px; margin-left:240px; color:#666;}
+.kong{ width:16px; height:10px; display:inline-block;}
+.zi{  font-size:16px; padding-top:10px; line-height:16px;}
+input{ width:242px; height:34px; border:1px solid #CFCFCF; color:#999; font-size:14px; padding-left:6px; line-height: 34px;}
+.red{ font-size:12px; color:#c42117; margin-left:10px; line-height:28px; width:6px; height:34px; display:inline-block;}
+.xia{ margin-bottom:-2px;}
+.ma{ width:80px;}
+a.yanzhengma{cursor: pointer; margin-left:15px;width:145px; height:34px; margin-bottom:6px;
+   display: inline-block;background:#EEEEEE;color: #666;border:1px solid #CFCFCF;text-align:center;line-height:32px;}
+/*button*/
+.zhuce1{ margin-left:84px; margin-top:20px; height:36px; width:86px; text-align:center;display: inline-block; line-height:36px; 
+  background:#262C6A; color:#FFFFFF; border:none; font-size:16px; cursor:pointer;font-family:"Î¢ÈíÑÅºÚ", "Arial Narrow";}
+.zhuce1:hover{color:#FFFFFF;}
+.Validform_right{ width:158px; height:34px; display:inline-block; background:url(../../images/r-l.png) no-repeat 0px -30px; margin-left:14px; padding-left:15px; color:#1657c4; line-height:26px;}
+.Validform_wrong{ width:300px; height:34px; display:inline-block; background:url(../../images/r-l.png) no-repeat 14px 6px;font-size:12px; color:#c42117; margin-left:0px; padding-left:30px; line-height:26px;}
+
+
+

@@ -1,0 +1,10 @@
+#content{ width:948px; height:500px; margin:0 auto;}
+.xuanze{ color:#262c69; border-bottom:1px solid #D8271D; float:left; width:114px; margin-top:30px; font-size:16px; font-weight:bold;}
+.you{ width:834px; float:left; height:0; border-bottom:1px solid #B7B7B7; margin-top:52px;}
+.geren{ float:left; margin-top:96px; width:150px; height:32px; background:url(../../images/beijing.png) no-repeat 18px 0px; padding-top:140px; display:block; color:#6c6c6c; text-align:center; font-size:16px; margin-left:105px; margin-bottom:90px;}
+.geren:hover{ color:#c42117;  background:url(../../images/beijing.png) no-repeat 18px -282px;}
+.danwei{ float:left; margin-top:96px; width:150px; height:32px; background:url(../../images/beijing.png) no-repeat -226px 0px; padding-top:140px; display:block; color:#6c6c6c; text-align:center; font-size:16px; margin-left:105px; margin-bottom:90px;}
+.danwei:hover{ color:#c42117;  background:url(../../images/beijing.png) no-repeat -226px -282px;}
+.lvshi{ float:left; margin-top:96px; width:150px; height:32px; background:url(../../images/beijing.png) no-repeat -470px 0px; padding-top:140px; display:block; color:#6c6c6c; text-align:center; font-size:16px; margin-left:105px; margin-bottom:90px;}
+.lvshi:hover{ color:#c42117;  background:url(../../images/beijing.png) no-repeat -470px -282px;}
+
