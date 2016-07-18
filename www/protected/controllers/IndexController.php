@@ -6,6 +6,9 @@ class IndexController extends CommonController{
     }
     function actionIndex(){
       $this->title='季联赛官网';
+        $new=new NewsModel();
+        $data['newt']=$new->GetChan();
+//        var_dump($data);die;
         $this->render('index');
     }
 }

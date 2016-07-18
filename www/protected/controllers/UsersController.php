@@ -13,9 +13,7 @@ class UsersController extends CommonController{
      * 用户注册
      * */
     function actionRegView(){
-        $new=new NewsModel();
-        $data['newt']=$new->GetNtype();
-        var_dump($data);
+
         
     }
 
