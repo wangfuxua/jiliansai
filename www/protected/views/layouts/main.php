@@ -11,7 +11,7 @@
     <script type="text/javascript" src="<?php echo base_url()?>/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>/js/idangerous.swiper.min.js"></script>
 </head>
-<body>
+<body class="bg_1">
 <div class="nav">
     <div class="nav_1">
         <img class="nav_logo" src="<?php echo base_url()?>/img/logo.png" height="120" title="logo">

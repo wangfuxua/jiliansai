@@ -11,7 +11,7 @@
     </div>
     <div class="content">
         <div class="home_d1 fl">
-            <h2 class="home_tit1">新闻中心</h2>
+            <!-- <h2 class="home_tit1">新闻中心</h2> -->
             <div class="home_tab_box">
                 <div id="zxzx_btn" class="tab_btn">
                     <div class="sel active"><a href="javascript:void(0);">新闻</a></div>
