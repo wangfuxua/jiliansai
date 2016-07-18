@@ -51,7 +51,7 @@
                     <td class=" sorting_1"><?php echo $v->title?></td>
                     <td class=" "><?php echo $v->desc?></td>
                     <td class="hidden-480 "><?php echo $v->cln_id?></td>
-                    <td class="hidden-480 ">查看</td>
+                    <td class="hidden-480 "><a href="<?php echo base_url('news/addnews/id/'.$v->id);?>">查看</a></td>
                 </tr>
                 <?php endforeach;?>
                 <?php endif;?>

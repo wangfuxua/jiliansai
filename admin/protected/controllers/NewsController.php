@@ -18,7 +18,14 @@ class NewsController extends CommonController{
     function actionAddnews(){
         $news=new NewsModel();
         $data['cln']=$news->GetNewsType();
-
+        $news='';
+       $id= Yii::app()->request->getParam('id');
+        if($id){
+            $new=new NewsModel();
+           $data['info']= $new->GetNewsinfo($id);
+//            var_dump($data);die;
+            $this->render('editnew',$data);die;
+        }
         $this->render('addnew',$data);
     }
     function actionGoAddnew(){

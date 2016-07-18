@@ -93,7 +93,7 @@
                             <div class="control-group">
                                 <label class="control-label">标题：</label>
                                 <div class="controls">
-                                    <input type="text" name="title" class="b-wrap " data-trigger="hover"     datatype="*1-116" nullmsg="栏目名称">
+                                    <input type="text" name="title" class="b-wrap " data-trigger="hover"  value="<?php echo $info['title'];?>"    datatype="*1-116" nullmsg="栏目名称">
                                     <span class="help-inline  Validform_checktip"></span>
                                 </div>
                             </div>
@@ -104,7 +104,7 @@
 
 
                                         <div class="utxtximg">
-                                            <img class="zltx" id="header_photo" src="" onerror="this.src='<?php echo base_url() ?>images/usertx.png'"  width="100" height="100">
+                                            <img class="zltx" id="header_photo" src="<?php echo base_url($info['logo']);?>" onerror="this.src='<?php echo base_url() ?>images/usertx.png'"  width="100" height="100">
                                         </div>
                                         <div class="txupload">
                                             <input type="file"   name="btn_header3" id="btn_header3" style="display: none;background: red">
@@ -121,7 +121,7 @@
                                     <div class="control-group">
                                         <label class="control-label">创建时间：</label>
                                         <div class="controls">
-                                            <input type="text" name="timeline" class="m-wrap big" data-trigger="hover"  value="<?php echo date('Y-m-d H:i:s',time())?>"     datatype="*1-255" nullmsg="创建时间">
+                                            <input type="text" name="timeline" class="m-wrap big" data-trigger="hover"  value="<?php echo date('Y-m-d H:i:s',$info['timeline'])?>"     datatype="*1-255" nullmsg="创建时间">
                                             <span class="help-inline  Validform_checktip"></span>
                                         </div>
                                     </div>
@@ -129,21 +129,24 @@
                             <div class="control-group" id="tiaoma">
                                 <label class="control-label">描述：</label>
                                 <div class="controls">
-                                    <textarea class="large m-wrap" rows="6" cols="60"  name="desc"></textarea>
+                                    <textarea class="large m-wrap" rows="6" cols="60"  name="desc"><?php echo $info['desc']?></textarea>
 
                                 </div>
 
                             </div>
                                     <div style=" ">
+
                                     <!-- 加载编辑器的容器 -->
                                     <script id="container" name="text" type="text/plain">
-
+                                        <?php echo $info['text']?>
                                     </script>
                                     <!-- 配置文件 -->
                                     <script type="text/javascript" src="/js/ueditor/ueditor.config.js"></script>
                                     <!-- 编辑器源码文件 -->
+
                                     <script type="text/javascript" src="/js/ueditor/ueditor.all.js"></script>
                                     <!-- 实例化编辑器 -->
+
                                     <script type="text/javascript">
                                         var ue = UE.getEditor('container');
                                     </script>

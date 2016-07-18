@@ -52,9 +52,19 @@ class NewsModel extends CommonModel{
      * 获取文章所属栏目
      * */
     function GetTname($id){
-$sql="select name from `jls_colmns` where id=".$id;
+        $sql="select name from `jls_colmns` where id=".$id;
         $r=Yii::app()->db->createCommand($sql)->queryRow();
         return $r['name'];
+    }
+
+    /*
+     * 获取文章详情
+     * */
+    function GetNewsinfo($id){
+        if(!$id) return 0;
+$sql="select * from `jls_news` where id={$id}";
+        $data=Yii::app()->db->createCommand($sql)->queryRow();
+      return $data;
     }
 }
 
