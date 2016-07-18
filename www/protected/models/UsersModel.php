@@ -37,7 +37,7 @@ class UsersModel extends CommonModel{
      * */
     function GetPhone(){
         $uid=Yii::app()->user->id;
-        $user=mew Dtable('users');
+        $user=new Dtable('users');
           $criteria = new CDbCriteria;
         $criteria->addCondition('uid='.$uid);
         $criteria->select='phone';
@@ -47,7 +47,7 @@ class UsersModel extends CommonModel{
      * 根据用户uid更新用户密码
      * */
     function UpuserPwd($pwd){
-    $uid=Yii:;app()->user->id;
+    $uid=Yii::app()->user->id;
         if(!$uid) return 0;
         $user=new Dtable('users');
         $criteria = new CDbCriteria;
