@@ -12,7 +12,7 @@ class ItemModel extends CommonModel{
         return $item->findAll();
     }
     /*
-     *
+     *获取比赛需要的验证项目
      * */
 
 

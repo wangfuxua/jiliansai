@@ -32,6 +32,45 @@ class ItemController extends CommonController{
         }
     }
 
+    /*
+     * 添加比赛
+     * */
+    function actionAddGame(){
+       $itemid= Yii::app()->request->getParam('itemid');
+        $m=new ItemModel();
+        if(!$itemid){
+            $this->redirect('/item/ItemList');die;
+        }
+        $data['item']=$m->GetItemByI($itemid);
+        $data['pnums']=$m->GetPnumByI($itemid);
+        $data['vers']=$m->GetVers();
+        $this->render('addgame',$data);
+    }
+    /*
+     * 获取比赛列表
+     * */
+    function actionGames(){
+        $m=new ItemModel();
+        $data=  $m->GetGames(0);
+        $data['item']= $m->GetItemsBySql();
+
+//        var_dump($data);die;
+        $this->render('gamelist',$data);
+    }
+
+    /*
+     * 添加比赛动作
+     * */
+    function actionGoAddG(){
+        $data=$_POST;
+        $m=new ItemModel();
+       $r= $m->Addgame($data);
+        if($r){
+            $this->redirect('/item/Games');
+        }else{
+            $this->redirect('/item/ItemList');
+        }
+    }
 
 }
 
