@@ -26,53 +26,53 @@ class IsLoginFilter extends CFilter {
 	private $loginflag = "__ss_admin_flag";
 	private $jumprule = array();
 
-	public function filter($filterChain) {
-		Yii::app()->user->id = 0;
-		Yii::app()->user->name = '来宾用户';
-		$flag = 0;
-		// 判断flag键值是否存在
-		if (!array_key_exists($this->loginflag, $_COOKIE)) {
-			//$this->checkUser();
-			$filterChain->run();
-			die;
-		}
-
-		$flag = $_COOKIE[$this->loginflag];
-
-		// $sql = "SELECT t1.*,t2.role FROM `admin_user` t1,`admin_role` t2 WHERE t1.role_id=t2.id  AND t1.flag='{$flag}'";
-		$sql = "SELECT * FROM `jls_admin_users` WHERE a.`flag`='{$flag}'";
-		// echo $sql; die;
-		$command = Yii::app()->db->createCommand($sql);
-		$login = $command->queryRow();
-		// print_r($login); die;
-
-		if (empty($login)) {
-			//$this->checkUser();
-			$filterChain->run();
-			die;
-		}
-
-		Yii::app()->user->id = $login['uid'];
-		Yii::app()->user->name = $login['username'];
-		Yii::app()->user->behaviors['role'] = $login['role'];
-
-		// $user = User::model()->find('uid=:uid', array(':uid'=>$login->uid));
-
-		/*$sql = "SELECT * FROM `admin_user` WHERE `uid`='{$login['uid']}'";
-		$command = Yii::app()->db->createCommand($sql);
-		$user = $command->queryRow();
-
-		if (isset($user)) {
-			Yii::app()->user->name = !!$user['name'] ? $user['name'] : $login['phone'];
-			Yii::app()->user->behaviors['isname'] = !!$user['name'] ? 1 : 0;
-			Yii::app()->user->behaviors['status'] = $user['status'];
-		}*/
-		// Yii::app()->user->username = $user->username;
-		// die;
-
-		//$this->checkUser($login['uid']);
-		$filterChain->run();
-	}
+//	public function filter($filterChain) {
+//		Yii::app()->user->id = 0;
+//		Yii::app()->user->name = '来宾用户';
+//		$flag = 0;
+//		// 判断flag键值是否存在
+//		if (!array_key_exists($this->loginflag, $_COOKIE)) {
+//			//$this->checkUser();
+//			$filterChain->run();
+//			die;
+//		}
+//
+//		$flag = $_COOKIE[$this->loginflag];
+//
+//		// $sql = "SELECT t1.*,t2.role FROM `admin_user` t1,`admin_role` t2 WHERE t1.role_id=t2.id  AND t1.flag='{$flag}'";
+//		$sql = "SELECT * FROM `jls_admin_users` WHERE a.`flag`='{$flag}'";
+//		// echo $sql; die;
+//		$command = Yii::app()->db->createCommand($sql);
+//		$login = $command->queryRow();
+//		// print_r($login); die;
+//
+//		if (empty($login)) {
+//			//$this->checkUser();
+//			$filterChain->run();
+//			die;
+//		}
+//
+//		Yii::app()->user->id = $login['uid'];
+//		Yii::app()->user->name = $login['username'];
+//		Yii::app()->user->behaviors['role'] = $login['role'];
+//
+//		// $user = User::model()->find('uid=:uid', array(':uid'=>$login->uid));
+//
+//		/*$sql = "SELECT * FROM `admin_user` WHERE `uid`='{$login['uid']}'";
+//		$command = Yii::app()->db->createCommand($sql);
+//		$user = $command->queryRow();
+//
+//		if (isset($user)) {
+//			Yii::app()->user->name = !!$user['name'] ? $user['name'] : $login['phone'];
+//			Yii::app()->user->behaviors['isname'] = !!$user['name'] ? 1 : 0;
+//			Yii::app()->user->behaviors['status'] = $user['status'];
+//		}*/
+//		// Yii::app()->user->username = $user->username;
+//		// die;
+//
+//		//$this->checkUser($login['uid']);
+//		$filterChain->run();
+//	}
 
 	private function checkUser($uid='') {
 		$ctrl = Yii::app()->getController()->id;

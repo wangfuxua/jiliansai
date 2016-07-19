@@ -15,12 +15,17 @@ class UsersModel extends CommonModel{
      * 用户注册
      * */
     function Regin($phone,$pwd){
+        try{
             $user=new Dtable('users');
-            $user->uid=time().rand(100000,999999);
+            $user->uid=$uid=time().rand(100000,999999);
             $user->phone=$phone;
              $user->password=$this->AddPass($pwd);
              $user->timeline=time();
+             Yii::app()->user->id=$uid;
             return $user->save();
+        }catch (Exception $e){
+            return -1;
+        }
     }
     /*
      * 登陆
@@ -30,7 +35,15 @@ class UsersModel extends CommonModel{
         $criteria = new CDbCriteria;
         $criteria->addCondition('phone='.$phone);
         $r=$user->find($criteria);
-        return $this->CheckPass($pwd,$r->password);
+        $r1= $this->CheckPass($pwd,$r->password);
+//        var_dump();
+        if($r1){
+
+            Yii::app()->user->id=$r->uid;
+            return 1;
+        }else{
+            return 0;
+        }
     }
     /*
      * 根据用户uid 获取用户手机号
