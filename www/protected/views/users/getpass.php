@@ -15,7 +15,7 @@
                 </div><br>
                 <input class="login_ipt1 mt20" type="password" name="password" placeholder="请设置您的密码"><br>
                 <input class="login_ipt1 mt20" type="password" name="password1" placeholder="请重新输入您的密码"><br>
-                <input class="login_sub1 mt20 "  type="button" value="提交"><br>
+                <input class="login_sub1 mt20 "  type="submit" value="提交"><br>
                 <a class="login_a2 mt20" href="<?php echo base_url('users/login')?>" >返回</a>
             </form>
             <div class="clear"></div>

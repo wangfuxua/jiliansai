@@ -16,8 +16,16 @@
     <div class="nav_1">
         <img class="nav_logo" src="<?php echo base_url()?>/img/logo.png" height="120" title="logo">
         <div class="nav_login">
-            <a class="mr20" href="javascript:;">登录</a>
-            <a href="javascript:;">注册</a>
+            <?php if(Yii::app()->user->id):?>
+                <?php $sql="select * from `jls_users` where uid=".Yii::app()->user->id;
+                $users=Yii::app()->db->createCommand($sql)->queryRow();
+                ?>
+                  <a class="mr20" style="color: red" href="javascript:;"><?php echo $users['phone']?></a>
+                <a href="<?php echo base_url('/users/logout');?>">退出</a>
+            <?php else:?>
+            <a class="mr20" href="<?php echo base_url('/users/login');?>">登录</a>
+            <a href="<?php echo base_url('/users/regview');?>">注册</a>
+            <?php endif;?>
         </div>
     </div>
     <ul class="nav_ul">

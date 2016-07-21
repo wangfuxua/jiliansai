@@ -35,6 +35,9 @@ class UsersModel extends CommonModel{
         $criteria = new CDbCriteria;
         $criteria->addCondition('phone='.$phone);
         $r=$user->find($criteria);
+//        var_dump($r);
+//        echo $r->password;
+//        die;
         $r1= $this->CheckPass($pwd,$r->password);
 //        var_dump();
         if($r1){
@@ -88,6 +91,14 @@ class UsersModel extends CommonModel{
         $wp_hasher = new PasswordHash(8, TRUE);
         $rs = $wp_hasher->CheckPassword($need, $pwd);
         return $rs;
+    }
+    /*
+     * 找回密码
+     * */
+    function GetPass($phone,$pwd){
+            $pwd=$this->AddPass($pwd);
+            $sql="update `jls_users` set password='{$pwd}' where phone={$phone}";
+        return Yii::app()->db->createCommand($sql)->execute();
     }
 
 

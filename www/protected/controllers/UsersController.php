@@ -89,18 +89,46 @@ class UsersController extends CommonController{
           $phone= Yii::app()->request->getParam('phone');
           $m=new UsersModel();
           $r=$m->Login($phone,$password);
-          if($r){
+          if(!$r){
               $this->redirect('/users/Login/errmsg/密码错误');
           }else{
               $this->redirect('/');
           }
       }
     /*
+     * 退出登录
+     * */
+    function actionLogout(){
+        Yii::app()->user->id=0;
+        $this->redirect('/');
+    }
+    /*
      * 找回密码
      * */
     function actionGetPass(){
         $this->render('getpass');
     }
+    function actionGoGetPass(){
+        $password= Yii::app()->request->getParam('password');
+        $password1= Yii::app()->request->getParam('password1');
+        $phone= Yii::app()->request->getParam('phone');
+        $phonecode= Yii::app()->request->getParam('phonecode');
+        if($password!=$password1){
+            $this->redirect('/users/GetPass/errmsg/两次密码输入不一致');die;
+        }
+//        if($phonecode!=$_SESSION['reg_'.$phone]){
+//            $this->redirect('/users/GetPass/errmsg/手机验证码错误');die;
+//        }
+        $m=new UsersModel();
+        $r=$m->GetPass($phone,$password);
+        if($r){
+            $this->redirect('/users/Login');die;
+        }else{
+            $this->redirect('/users/GetPass/errmsg/两次密码输入不一致');die;
+        }
+
+    }
+
     /**
      * 验证码
      * @param  string $type 生成种类

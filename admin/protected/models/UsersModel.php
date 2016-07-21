@@ -34,6 +34,27 @@ class UsersModel extends CommonModel{
         $rs = $wp_hasher->CheckPassword($need, $pwd);
         return $rs;
     }
+    function GetUserL(){
+        $criteria = new CDbCriteria;
+        $w='where 1';
+        $sql="select count(1) from `jls_users`";
+        $num=Yii::app()->db->createCommand($sql)->queryScalar();;
+//        echo $num;die;
+
+        $page=new CPagination($num);
+        $page->pageSize=20;//每页数量
+        $sql="select a.*,b.name from `jls_users` as a left join `jls_user_info` as b on a.uid=b.uid  {$w}";
+        $sql=$sql." limit :offset,:limit";
+        $page->applyLimit($criteria);
+        $model=Yii::app()->db->createCommand($sql);
+        $model->bindValue(':offset',$page->currentPage*$page->pageSize);
+        $model->bindValue(':limit',$page->pageSize);
+        $data=$model->queryAll();
+//        var_dump($data);die;
+        return array('data'=>$data,'page'=>$page);
+    }
+
+
 }
 
 
