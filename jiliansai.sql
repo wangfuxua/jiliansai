@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2016-07-21 11:49:29
+Date: 2016-07-22 18:04:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `jls_admin_colmns` (
   `url` varchar(120) NOT NULL COMMENT '链接',
   `timeline` int(12) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_admin_colmns
@@ -46,6 +46,8 @@ INSERT INTO `jls_admin_colmns` VALUES ('9', '2', '7', '1', 'channel', '合作方
 INSERT INTO `jls_admin_colmns` VALUES ('10', '2', '7', '1', 'channel', '合作媒体管理', 'channel/meiti', '0');
 INSERT INTO `jls_admin_colmns` VALUES ('11', '2', '7', '1', 'channel', '添加合作', 'channel/addChannel', '0');
 INSERT INTO `jls_admin_colmns` VALUES ('12', '2', '1', '1', 'item', '比赛管理', 'item/games', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('13', '1', '0', '1', 'Users', '会员管理', '#', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('14', '1', '13', '1', 'Users', '会员列表', 'users/list', '0');
 
 -- ----------------------------
 -- Table structure for jls_admin_users
@@ -312,7 +314,7 @@ CREATE TABLE `jls_users` (
 -- Records of jls_users
 -- ----------------------------
 INSERT INTO `jls_users` VALUES ('1', '1468919673700375', '2147483647', '$P$BeLn2MZeQRX9mpdv6gymW0M3Qjt4mz/', '1468919673');
-INSERT INTO `jls_users` VALUES ('2', '1468919772559805', '18201039216', '$P$B4gP3uNVIL5TPPjR0v7wAG0GUutalu0', '1468919773');
+INSERT INTO `jls_users` VALUES ('2', '1468919772559805', '18201039216', '$P$BM00qn78QsFemEj.fYDIRFwNywxTPz.', '1468919773');
 INSERT INTO `jls_users` VALUES ('8', '1468920649277841', '18612940648', '$P$Bgb3GK.jgkq.INfTMjrdFJVZuLDsfJ0', '1468920649');
 
 -- ----------------------------
