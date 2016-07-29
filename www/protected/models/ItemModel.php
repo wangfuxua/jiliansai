@@ -8,7 +8,7 @@ class ItemModel extends CommonModel{
      * 获取比赛项目
      * */
     function GetItems(){
-        $item=new Dtable('imtems');
+        $item=new Dtable('items');
         return $item->findAll();
     }
     /*
@@ -24,8 +24,26 @@ class ItemModel extends CommonModel{
      * 获取项目下的所有比赛
      * */
     function GetGaems($itemid){
-        $sql="select * from  `jls_games` where item_id={$itemid}";
+        $sql="select a.*,b.name from  `jls_games` as a left join `jls_items` as b on a.item_id=b.id where a.item_id={$itemid}";
         return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+    /*
+     *判断当前选择游戏是否允许报名
+     * */
+    function Checkgame($gameid){
+        $tt=time();
+        $sql="select id from `jls_games` where `etime`>{$tt} and stime<{$tt} and status!=0";
+        return Yii::app()->createCommand($sql)->queryScalar();
+    }
+    /*
+     * 添加报名队伍的联系人信息
+     * */
+    function AddGame1($data){
+            $a['uid']=Yii::app()->user->id;
+            $a['phone']=$data['phone'];
+            $a['name']=$data['name'];
+            $a['timeline']=time();
+       return  $this->addData('jls_teams',$a);
     }
     
 

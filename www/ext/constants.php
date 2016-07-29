@@ -39,15 +39,6 @@
 
 defined('DOMAIN') or define('DOMAIN', '');
 defined('ROOT') or define('ROOT', '.');
-defined('PREVIEW') or define('PREVIEW', 'http://');
-defined('LAWYER') or define('LAWYER', 'http://127.0.0.10');
-defined('LINES') or define('LINES', 'https://www.maijinwang.com');
-defined('SYSBK') or define('SYSBK', 'https://sys.maijinwang.com');
-defined('tjprice') or define('tjprice',5);	// 普通提金费
-defined('tjprice2') or define('tjprice2',10);	// 3g提金费
-defined('TJPRICE3') or define('TJPRICE3',35);	// 迷你金提金费
-defined('TJPRICE4') or define('TJPRICE4',50);	// 金钞提金费
-defined('TJPRICE5') or define('TJPRICE5',5*0.7);	// 原料金提金费
-defined('codekey') or define('codekey','majin1014');
-defined('SITELOCAL') or define('SITELOCAL', 'preview');
+defined('ADMIMG') or define('ADMIMG', 'http://127.0.0.134/');
+
 /* End of file constants.php */

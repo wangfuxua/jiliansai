@@ -15,11 +15,12 @@ $inc = array(
 );
 // remove the following line when in production mode
 defined('YII_DEBUG') or define('YII_DEBUG',true);
+
 require_once($yii);
 // include self
 // echo YII_PATH
 foreach ($inc as $item) {
 	require_once($item);
 }
- 
+
 Yii::createWebApplication($config)->run();

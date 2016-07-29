@@ -86,34 +86,6 @@
                 <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
             </embed>
             </li>
-            <li>
-                <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
-            </embed>
-            </li>
-            <li>
-                <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
-            </embed>
-            </li>
-            <li>
-                <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
-            </embed>
-            </li>
-            <li>
-                <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
-            </embed>
-            </li>
-            <li>
-                <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
-            </embed>
-            </li>
-            <li>
-                <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
-            </embed>
-            </li>
-            <li>
-                <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
-            </embed>
-            </li>
             </ul>
         </div>
     </div>
