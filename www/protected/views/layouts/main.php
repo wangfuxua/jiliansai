@@ -30,7 +30,7 @@
     </div>
     <ul class="nav_ul">
         <li><a href="<?php echo base_url()?>">官网首页</a></li>
-        <li><a href="javascript:;">快速报名</a></li>
+        <li><a href="<?php echo base_url('item/')?>">快速报名</a></li>
         <li><a href="<?php echo base_url('video/video');?>">赛事直播</a></li>
         <li><a href="javascript:;">新闻中心</a></li>
         <li><a href="javascript:;">商务合作</a></li>

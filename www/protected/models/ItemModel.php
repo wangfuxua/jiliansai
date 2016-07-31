@@ -45,7 +45,15 @@ class ItemModel extends CommonModel{
             $a['timeline']=time();
        return  $this->addData('jls_teams',$a);
     }
-    
+/*
+ * 根据游戏id'id获取itemid
+ * */
+    function GetItemid($gameid){
+        if (!$gameid) return 0;
+        $sql="selct item_id from `jls_games` where id=:id";
+        return Yii::app()->db->createCommand($sql)->bindParam(':id',$gameid)->queryScalar();
+    }
+
 
 }
 
