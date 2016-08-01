@@ -1,14 +1,14 @@
 
     <link rel="stylesheet" href="<?php echo base_url()?>/css/idangerous.swiper.css">
     <script type="text/javascript" src="<?php echo base_url()?>/js/idangerous.swiper.min.js"></script>
+
     <div class="swiper-container home_bn">
         <div class="swiper-wrapper">
+<?php foreach($banner as $v):?>
             <a class="swiper-slide dpb" href="javascript:;">
-                <img class="w100" src="<?php echo base_url()?>/img/banner01.jpg">
+                <img class="w100" src="<?php echo ADMIMG.$v['img']?>">
             </a>
-            <a class="swiper-slide dpb" href="javascript:;">
-                <img class="w100" src="<?php echo base_url()?>/img/banner01.jpg">
-            </a>
+            <?php endforeach;?>
         </div>
         <div class="pagination"></div>
     </div>
@@ -18,6 +18,7 @@
                 <!-- <h2 class="home_tit1">新闻中心</h2> -->
                 <div class="home_tab_box">
                     <div id="zxzx_btn" class="tab_btn">
+
                         <div class="sel active"><a href="javascript:void(0);">新闻</a></div>
                         <div class="sel"><a href="javascript:void(0);">战报</a></div>
                         <div class="sel"><a href="javascript:void(0);">专访</a></div>
@@ -25,101 +26,74 @@
                     </div>
                     <div id="zxzx_con" class="zxzx_con">
                     <div class="zxzx_content active" >
+                        <?php foreach($news[7] as $k=>$v):?>
+                            <?php if($k!=0):?>
+                            <div class="home_line1 "></div>
+                                <?php endif;?>
                         <div class="home_column">
                             <div class="home_pic">
-                                <a title="" target="_blank" href="#"><img alt="" width="188" height="106" width="188" height="106" src="<?php echo base_url()?>/img/index/new_img.jpg"></a>
+                                <a title="" target="_blank" href="#"><img alt="" width="188" height="106" width="188" height="106" src="<?php echo ADMIMG.$v['logo']?>"></a>
                             </div>
                             <div class="home_caption">
-                                <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
+                                <h4 class="tit mb10"><a href="" target="_blank" title=""><?php echo $v['title']?></a></h4>
+                                <p class="txt"><?php echo $v['desc']?>。</p>
                             </div>
                         </div>
-                        <div class="home_line1"></div>
-                        <div class="home_column">
-                            <div class="home_pic">
-                                <a title="" target="_blank" href="#"><img alt="" width="188" height="106" src="<?php echo base_url()?>/img/index/new_img.jpg"></a>
-                            </div>
-                            <div class="home_caption">
-                                <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
-                            </div>
-                        </div>
-                        <div class="home_line1"></div>
-                        <div class="home_column">
-                            <div class="home_pic">
-                                <a title="" target="_blank" href="#"><img alt="" width="188" height="106" src="<?php echo base_url()?>/img/index/new_img.jpg"></a>
-                            </div>
-                            <div class="home_caption">
-                                <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
-                            </div>
-                        </div>
-                        <div class="home_line1"></div>
-                        <div class="home_column">
-                            <div class="home_pic">
-                                <a title="" target="_blank" href="#"><img alt="" width="188" height="106" src="<?php echo base_url()?>/img/index/new_img.jpg"></a>
-                            </div>
-                            <div class="home_caption">
-                                <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
-                            </div>
-                        </div>
-                        <div class="home_line1"></div>
-                        <div class="home_column">
-                            <div class="home_pic">
-                                <a title="" target="_blank" href="#"><img alt="" width="188" height="106" src="<?php echo base_url()?>/img/index/new_img.jpg"></a>
-                            </div>
-                            <div class="home_caption">
-                                <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
-                            </div>
-                        </div>
-                        <div class="home_line1"></div>
-                        <div class="home_column">
-                            <div class="home_pic">
-                                <a title="" target="_blank" href="#"><img alt="" width="188" height="106" src="<?php echo base_url()?>/img/index/new_img.jpg"></a>
-                            </div>
-                            <div class="home_caption">
-                                <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
-                            </div>
-                        </div>
-                        <div class="home_line1"></div>
+
+                        <?php endforeach;?>
+
                     </div>
 
                         <div class="zxzx_content" >
-                            <div class="home_column">
-                                <div class="home_pic">
-                                    <a title="" target="_blank" href="#"><img alt="" width="188" height="106" src="<?php echo base_url()?>/img/game02.png"></a>
+                            <?php foreach($news[2] as $k=>$v):?>
+                                <?php if($k!=0):?>
+                                    <div class="home_line1"></div>
+                                <?php endif;?>
+                                <div class="home_column">
+                                    <div class="home_pic">
+                                        <a title="" target="_blank" href="#"><img alt="" width="188" height="106" width="188" height="106" src="<?php echo ADMIMG.$v['logo']?>"></a>
+                                    </div>
+                                    <div class="home_caption">
+                                        <h4 class="tit mb10"><a href="" target="_blank" title=""><?php echo $v['title']?></a></h4>
+                                        <p class="txt"><?php echo $v['desc']?>。</p>
+                                    </div>
                                 </div>
-                                <div class="home_caption">
-                                    <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                    <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
-                                </div>
-                            </div>
+                            <?php endforeach;?>
                         </div>
 
                         <div class="zxzx_content" >
-                            <div class="home_column">
-                                <div class="home_pic">
-                                    <a title="" target="_blank" href="#"><img alt="" width="188" height="106" src="<?php echo base_url()?>/img/game03.png"></a>
+                            <?php foreach($news[8] as $k=>$v):?>
+                                <?php if($k!=0):?>
+                                    <div class="home_line1"></div>
+                                <?php endif;?>
+                                <div class="home_column">
+                                    <div class="home_pic">
+                                        <a title="" target="_blank" href="#"><img alt="" width="188" height="106" width="188" height="106" src="<?php echo ADMIMG.$v['logo']?>"></a>
+                                    </div>
+                                    <div class="home_caption">
+                                        <h4 class="tit mb10"><a href="" target="_blank" title=""><?php echo $v['title']?></a></h4>
+                                        <p class="txt"><?php echo $v['desc']?>。</p>
+                                    </div>
                                 </div>
-                                <div class="home_caption">
-                                    <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                    <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
-                                </div>
-                            </div>
+
+                            <?php endforeach;?>
                         </div>
                         <div class="zxzx_content" >
-                            <div class="home_column">
-                                <div class="home_pic">
-                                    <a title="" target="_blank" href="#"><img alt="" width="188" height="106" src="<?php echo base_url()?>/img/game04.png"></a>
+                            <?php foreach($news[9] as $k=>$v):?>
+                                <?php if($k!=0):?>
+                                    <div class="home_line1"></div>
+                                <?php endif;?>
+                                <div class="home_column">
+                                    <div class="home_pic">
+                                        <a title="" target="_blank" href="#"><img alt="" width="188" height="106" width="188" height="106" src="<?php echo ADMIMG.$v['logo']?>"></a>
+                                    </div>
+                                    <div class="home_caption">
+                                        <h4 class="tit mb10"><a href="" target="_blank" title=""><?php echo $v['title']?></a></h4>
+                                        <p class="txt"><?php echo $v['desc']?>。</p>
+                                    </div>
                                 </div>
-                                <div class="home_caption">
-                                    <h4 class="tit mb10"><a href="" target="_blank" title="">WCA国际争霸赛开战在即，实力暗夜Lawliet领衔韩国军团</a></h4>
-                                    <p class="txt">WCA2016世界电子竞技大赛S2赛季正火爆上演，WCA在主干赛事的基础上，又推出全新高品质国家级电竞赛事&mdash;&mdash;WCA国际争霸赛，赛事将采取邀请制的方式，为电竞粉丝奉献上最高级别的国与国之间电竞实力的碰撞。</p>
-                                </div>
-                            </div>
+                            <?php endforeach;?>
+                            <div class="home_line1"></div>
                         </div>
 
 

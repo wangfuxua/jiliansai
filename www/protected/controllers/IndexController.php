@@ -6,10 +6,26 @@ class IndexController extends CommonController{
     }
     function actionIndex(){
       $this->title='季联赛官网';
+        //获取轮播图
+        $ad=new AdventModel();
+        $data['banner']=$ad->GetBans();
+
+        //获取新闻分类
         $new=new NewsModel();
-        $data['newt']=$new->GetChan();
-//        var_dump($data);die;
-        $this->render('index');
+        $data['newtype']=$new->GetNtype();
+        /*
+         * 获取新闻
+         * */
+        foreach($data['newtype'] as $v){
+        $data['news'][$v['id']]=$new->GetNews($v['id']);
+        }
+        /*
+         * 获取比赛项目
+         * */
+        $data['item']=$new->GetIGame();
+
+
+        $this->render('index',$data);
     }
 }
 ?>

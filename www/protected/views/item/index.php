@@ -1,13 +1,4 @@
-<div class="swiper-container home_bn">
-    <div class="swiper-wrapper">
-        <a class="swiper-slide dpb" href="javascript:;">
-            <img class="w100" src="<?php echo base_url()?>/img/banner01.jpg">
-        </a>
-        <a class="swiper-slide dpb" href="javascript:;">
-            <img class="w100" src="<?php echo base_url()?>/img/banner01.jpg">
-        </a>
-    </div>
-</div>
+
 <div class="content">
     <?php foreach($list as $k=>$v):?>
                 <div class="home_d3">
@@ -41,6 +32,9 @@
     <div class="clear"></div>
             <div class="foot_heoght"></div>
 <style>
+    .home_tit1{
+        background-size:auto ;
+    }
     .home_d3{
          height: auto;
         background-color: #12151a;
