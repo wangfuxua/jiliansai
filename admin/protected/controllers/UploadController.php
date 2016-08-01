@@ -85,7 +85,8 @@ class UploadController extends CController {
 //        var_dump($_FILES);die;
         $t['y'] = date('y', time());
         $t['m'] = date('m', time());
-        $path = 'attachment/game/head/' . $t['y'] . '/' . $t['m'];
+        $path = 'attachment/jls/' . $t['y'] . '/' . $t['m'];
+//        $path= Yii::app()->basePath.'/../../www/'.$path;
         $tool = new toolkit();
         $tool->createFolder($path);
 
@@ -122,14 +123,14 @@ class UploadController extends CController {
                 // 保存到头像目录，以及分别生成对应尺寸的头像
                 //require_once('./plugins/thumbHandler.php');
                 //include_once(dirname(dirname(__FILE__))."/library/thumbhandler.php");
-                Yii::import('application.library.thumbhandler');
-                $t = new thumbhandler();
+//                Yii::import('application.library.thumbhandler');
+//                $t = new thumbhandler();
                 //生成120头像
-                $t->setSrcImg($path . '/' . $pics);
-                $t->setDstImg($path . '/' . $pics);
-                //$t->setDstImg($path . '/' . $pic . '_s.jpg');
-                $t->setCutType(1); //1 截图，0 等比例缩放
-                $newphoto = $t->createImg(125, 125);
+//                $t->setSrcImg($path . '/' . $pics);
+//                $t->setDstImg($path . '/' . $pics);
+//                //$t->setDstImg($path . '/' . $pic . '_s.jpg');
+//                $t->setCutType(1); //1 截图，0 等比例缩放
+//                $newphoto = $t->createImg(125, 125);
                 //生成中图
                 /* $t->setSrcImg($path . '/' . $pics);
                   $t->setDstImg($path . '/' . $pic . '_m.jpg');
