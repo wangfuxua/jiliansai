@@ -36,8 +36,10 @@ class VideoModel extends CommonModel{
         $v['intr']=$data['intr'];
         $v['url']=$data['url'];
         $v['item_id']=$data['item_id'];
+        $v['logo']=$data['logo'];
         $v['timeline']=time();
         $v['status']=isset($data['status'])?$data['status']:0;
+        $v['type']=isset($data['type'])?implode(',',$data['type']):0;
        return  $this->addData('jls_videos',$v);
     }
     /*
@@ -50,8 +52,14 @@ class VideoModel extends CommonModel{
         $v['intr']=$data['intr'];
         $v['url']=$data['url'];
         $v['item_id']=$data['item_id'];
+        if(isset($data['logo'])){
+        $v['logo']=$data['logo'];
+        }
+
         $v['timeline']=time();
         $v['status']=$data['status'];
+        $v['type']=isset($data['type'])?implode(',',$data['type']):0;
+    
         return  $this->setData('jls_videos',$v,$array);
     }
         /*

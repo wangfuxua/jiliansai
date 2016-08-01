@@ -103,10 +103,12 @@
             <div class="home_d2 fr">
                 <div class="home_d2_con1">
                     <h2 class="home_tit1">比赛项目报名</h2>
-                    <img class="home_d2img" src="<?php echo base_url()?>/img/game01.png" >
-                    <img class="home_d2img" src="<?php echo base_url()?>/img/game02.png" >
-                    <img class="home_d2img" src="<?php echo base_url()?>/img/game03.png" >
-                    <img class="home_d2img" src="<?php echo base_url()?>/img/game04.png" >
+                    <?php foreach($item as $v):?>
+                        <a href="">
+                    <img class="home_d2img" src="<?php echo ADMIMG.$v['logo']?>" width="200" height="120    " >
+                            </a>
+                    <?php endforeach;?>
+
                 </div>
                 <div >
                     <h2 class="home_tit1 home_d2_con1_tit1">热门活动</h2>

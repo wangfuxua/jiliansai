@@ -14,4 +14,13 @@ class VideoModel extends CommonModel{
         $sql="select * from `jls_videos` order by `sort` desc limit 6";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
+
+    /*
+     * 首页热门视频
+     * */
+    function GetHotVs($item){
+        $sql="select * from `jls_videos` where 1 in (`type`) and item_id={$item} order by `sort` desc limit 6";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
 }

@@ -23,7 +23,8 @@ class IndexController extends CommonController{
          * 获取比赛项目
          * */
         $data['item']=$new->GetIGame();
-
+//        var_dump( $data['item']);die;
+        $data
 
         $this->render('index',$data);
     }

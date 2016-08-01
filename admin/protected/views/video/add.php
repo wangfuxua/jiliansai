@@ -98,6 +98,33 @@
                                 </div>
                             </div>
                             <div class="control-group">
+                                <label class="control-label">推荐：</label>
+                                <div class="controls">
+                                    <input type="checkbox" name="type[]" value="0" > 普通
+                                    <input type="checkbox" name="type[]" value="1" > 首页推荐
+                                    <input type="checkbox" name="type[]" value="2" >轮播推荐
+                                    <span class="help-inline  Validform_checktip"></span>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label">视频截图：</label>
+                                <div class="controls">
+                                    <div class="usercr">
+
+
+                                        <div class="utxtximg">
+                                            <img class="zltx" id="header_photo" src="" onerror="this.src='<?php echo base_url() ?>images/usertx.png'"  width="100" height="100">
+                                        </div>
+                                        <div class="txupload">
+                                            <input type="file"   name="btn_header3" id="btn_header3" style="display: none;background: red">
+                                        </div>
+                                        <div class="clear"></div>
+                                        <div class="user_info_p1 mb10"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="control-group">
                                 <label class="control-label">是否显示：</label>
                                 <div class="controls">
                                     <input type="checkbox" name="status" value="1" >
