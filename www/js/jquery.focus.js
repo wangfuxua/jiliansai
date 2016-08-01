@@ -42,23 +42,23 @@ jQuery.fn.Focus = function(o){
                         }, 600, "easeInOutSine");
                     }
                     jQuery(this)
-                    .bind("mouseenter", function(){
+                    .bind("click", function(){
                         clearInterval(_timeInterval);
                     })
-                    .bind("mouseleave",function(){
-                        _timer();
-                    });
+                    // .bind("mouseleave",function(){
+                    //     _timer();
+                    // });
                     _navs
-                    .bind("mouseenter", function(){
+                    .bind("click", function(){
                         clearInterval(_timeInterval);
                         var _self = jQuery(this);
                         var _index = _self.attr("rel");
                         _curIndex = _index;
                         _go(_self);
                     })
-                    .bind("mouseleave",function(){
-                        _timer();
-                    });
+                    // .bind("mouseleave",function(){
+                    //     _timer();
+                    // });
                     _timer();
                 });
             }

@@ -7,14 +7,12 @@
     <meta name="description" content="" />
     <link href="<?php echo base_url()?>/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url()?>/css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="<?php echo base_url()?>/css/idangerous.swiper.css">
     <script type="text/javascript" src="<?php echo base_url()?>/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/js/idangerous.swiper.min.js"></script>
 </head>
 <body class="bg_1">
 <div class="nav">
     <div class="nav_1">
-        <img class="nav_logo" src="<?php echo base_url()?>/img/logo.png" height="120" title="logo">
+        <img class="nav_logo" src="<?php echo base_url()?>img/index/index_logo.png" title="logo">
         <div class="nav_login">
             <?php if(Yii::app()->user->id):?>
                 <?php $sql="select * from `jls_users` where uid=".Yii::app()->user->id;
@@ -27,15 +25,16 @@
             <a href="<?php echo base_url('/users/regview');?>">注册</a>
             <?php endif;?>
         </div>
+        <ul class="nav_ul">
+            <li><a href="<?php echo base_url()?>">官网首页</a></li>
+            <li><a href="javascript:;">快速报名</a></li>
+            <li><a href="<?php echo base_url('video/video');?>">赛事直播</a></li>
+            <li><a href="javascript:;">新闻中心</a></li>
+            <li><a href="javascript:;">商务合作</a></li>
+        </ul>
     </div>
-    <ul class="nav_ul">
-        <li><a href="<?php echo base_url()?>">官网首页</a></li>
-        <li><a href="<?php echo base_url('item/')?>">快速报名</a></li>
-        <li><a href="<?php echo base_url('video/video');?>">赛事直播</a></li>
-        <li><a href="javascript:;">新闻中心</a></li>
-        <li><a href="javascript:;">商务合作</a></li>
-    </ul>
 </div>
+<div style="height:115px;"></div>
 
     <?php echo $content?>
 
@@ -48,25 +47,21 @@
     </ul>
 </div>
 
-<script type="text/javascript">
-    var mySwiper = new Swiper('.swiper-container',{
-        // pagination: '.pagination',
-        // paginationClickable: true,
-        loop:true,
-        autoplay:3000
-    })
-    function setBnH () {
-        var bn_h = $(window).width()*320/1200;
-        $(".home_bn").css({
-            "height":bn_h
-        })
-    }
-    $(function(){
-        setBnH ();
-    })
-    $(window).resize(function(){
-        setBnH ();
-    })
-</script>
+
 </body>
+<script type="text/javascript">
+    // function setLogoMr() {
+    //     var win_w = $(window).width();
+    //     var logo_mr = (win_w-1200)*0.2+50;
+    //     if (logo_mr > 50) {
+    //         $(".nav_logo").css({"margin-right" : logo_mr });
+    //     }
+    // }
+    // $(function(){
+    //     setLogoMr();
+    // })
+    // $(window).resize(function(){
+    //     setLogoMr();
+    // })
+</script>
 </html>
