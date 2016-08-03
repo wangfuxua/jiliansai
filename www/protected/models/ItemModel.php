@@ -11,6 +11,13 @@ class ItemModel extends CommonModel{
         return $item->findAll();
     }
     /*
+     * 获取比赛项目sql执行
+     * */
+    function GetItemsBysql(){
+        $sql="select * from `jls_items`";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+    /*
      *获取比赛需要的验证项目
      * */
     function GetVers($gameid){

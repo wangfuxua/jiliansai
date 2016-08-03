@@ -23,8 +23,30 @@ class IndexController extends CommonController{
          * 获取比赛项目
          * */
         $data['item']=$new->GetIGame();
-//        var_dump( $data['item']);die;
-        $data
+        //广告位置1
+        $data['adv1']=$ad->GetAdv('home_adv1');
+        $data['adv2']=$ad->GetAdv('home_adv2');
+        /*
+         * 获取所有的xiangm
+         * */
+        $it=new ItemModel();
+        $data['item']=$it->GetItemsBysql();
+        /*
+         * 获取热门视频
+         * */
+            $vs=new VideoModel();
+        $data['videos']=[];
+        foreach($data['item'] as $v){
+            $data['videos'][]=$vs->GetHotVs($v['id']);
+        }
+        /*
+         * 获取赞助
+         * */
+         $ch=new ChannelModel();
+            $data['zanzhu']=$ch->GetchByCid(4);
+            $data['hezuo']=$ch->GetchByCid(5);
+            $data['meiti']=$ch->GetchByCid(6);
+//            var_dump( $data['zanzhu']);die;
 
         $this->render('index',$data);
     }

@@ -22,7 +22,7 @@ class AdventModel extends  CommonModel{
      * 获取单广告图
      * */
     function GetAdv($show){
-        $sql="select * from  `jls_advent` where show='{$show}'and status=1 order by timeline desc limit 1 ";
+        $sql="select * from  `jls_advent` where `show`='{$show}'and status=1 order by timeline desc limit 1 ";
         return Yii::app()->db->createCommand($sql)->queryRow();
     }
 

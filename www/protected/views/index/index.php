@@ -104,7 +104,7 @@
                 <div class="home_d2_con1">
                     <h2 class="home_tit1">比赛项目报名</h2>
                     <?php foreach($item as $v):?>
-                        <a href="">
+                        <a href="<?php echo base_url('item/game/itemid/'.$v['id']);?>">
                     <img class="home_d2img" src="<?php echo ADMIMG.$v['logo']?>" width="200" height="120    " >
                             </a>
                     <?php endforeach;?>
@@ -112,11 +112,30 @@
                 </div>
                 <div >
                     <h2 class="home_tit1 home_d2_con1_tit1">热门活动</h2>
-                    <img width="440" height="278" src="<?php echo base_url()?>/img/index/new_img.jpg">
+                    <?php if($adv1['status']==1):?>
+                        <?php if($adv1['type']==1):?>
+                            <a href="<?php echo $adv1['url']?>">
+
+                                <?php else:?>
+                                    <a href="#">
+                        <?php endif;?>
+                    <img width="440" height="278" src="<?php echo ADMIMG.$adv1['img']?>">
+                            </a>
+
+                    <?php endif;?>
                 </div>
                 <div >
                     <h2 class="home_tit1 home_d2_con1_tit1">热门活动</h2>
-                    <img width="440" height="278" src="<?php echo base_url()?>/img/index/new_img.jpg">
+                    <?php if($adv2['status']==1):?>
+                    <?php if($adv2['type']==1):?>
+                    <a href="<?php echo $adv2['url']?>">
+
+                        <?php else:?>
+                        <a href="#">
+                            <?php endif;?>
+                    <img width="440" height="278" src="<?php echo ADMIMG.$adv2['img']?>">
+                        </a>
+                    <?php endif;?>
                 </div>
             </div>
             <div class="clear"></div>
@@ -128,10 +147,9 @@
             <div class="home_hotbox">
                 <h2 class="home_tit3">热门视频</h2>
                 <ul class="home_hot_tit">
-                    <li id="hottit1">英雄联盟</li>
-                    <li id="hottit2">英雄联盟</li>
-                    <li id="hottit3">英雄联盟</li>
-                    <li id="hottit4">英雄联盟</li>
+                    <?php foreach($item as $k=>$v):?>
+                    <li id="hottit<?php echo $k+1?>"><?php echo $v['name']?></li>
+                    <?php endforeach;?>
                 </ul>
                 <script type="text/javascript">
                     $(".home_hot_tit li").on("click",function(){
@@ -144,98 +162,60 @@
                 </script>
                 <div class="home_hot_con">
                     <div id="hotarr" class="home_hot_arr1"></div>
-                    <ul id="hot_conul1" class="home_hot_conul" style="display:block;">
+
+                    <?php foreach($videos as $k=>$v):?>
+
+                    <ul id="hot_conul<?php echo $k+1?>" class="home_hot_conul">
+                        <?php foreach($v as $val):?>
+                        <?php if(!empty($val)):?>
                         <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
+                            <img src="<?php echo ADMIMG.$val['logo']?>" width="250" height="145">
+                            <p class="tac fsz16 mt10 c_f"><?PHP ECHO $val['name']?></p>
                         </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
+                        <?php endif;?>
+                        <?php endforeach;?>
                     </ul>
-                    <ul id="hot_conul2" class="home_hot_conul">
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                    </ul>
-                    <ul id="hot_conul3" class="home_hot_conul">
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                    </ul>
-                    <ul id="hot_conul4" class="home_hot_conul">
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                        <li>
-                            <img src="<?php echo base_url()?>/img/index/img_hot.jpg" width="250" height="145">
-                            <p class="tac fsz16 mt10 c_f">英雄联盟华东赛区线上8强赛</p>
-                        </li>
-                    </ul>
+                    <?php endforeach;?>
+
+
                     <div class="clear"></div>
                 </div>
             </div>
             <h2 class="home_tit3 mt40 mb40">全程赞助</h2>
             <div class="home_hot_con">
                 <div class="imgs">
-                    <img class="" src="<?php echo base_url()?>/img/partner01.png" >
-                    <img class="" src="<?php echo base_url()?>./img/partner02.png" >
-                    <img class="" src="<?php echo base_url()?>/img/partner03.png" >
-                    <img class="" src="<?php echo base_url()?>/img/partner04.png" >
+                    <?php if(!empty($zanzhu)):?>
+                        <?php foreach($zanzhu as $v):?>
+                            <a href="">
+                    <img class="" src="<?php echo ADMIMG.$v['logo']?>" >
+                                </a>
+                            <?php endforeach;?>
+                    <?php endif?>
+
                 </div>
             </div>
             <h2 class="home_tit3 mt40 mb40">合作方</h2>
             <div class="home_hot_con">
                 <div class="imgs">
-                    <img class="" src="<?php echo base_url()?>/img/partner01.png" >
-                    <img class="" src="<?php echo base_url()?>./img/partner02.png" >
-                    <img class="" src="<?php echo base_url()?>/img/partner03.png" >
-                    <img class="" src="<?php echo base_url()?>/img/partner04.png" >
+                    <?php if(!empty($hezuo)):?>
+                        <?php foreach($hezuo as $v):?>
+                            <a href="">
+                                <img class="" src="<?php echo ADMIMG.$v['logo']?>" >
+                            </a>
+                            <?php endforeach;?>
+                    <?php endif?>
                 </div>
             </div>
             <h2 class="home_tit3 mt40 mb40">合作媒体</h2>
             <div class="home_hot_con">
                 <div class="imgs">
-                    <img class="" src="<?php echo base_url()?>/img/partner01.png" >
-                    <img class="" src="<?php echo base_url()?>./img/partner02.png" >
-                    <img class="" src="<?php echo base_url()?>/img/partner03.png" >
-                    <img class="" src="<?php echo base_url()?>/img/partner04.png" >
+                    <?php if(!empty($meiti)):?>
+                        <?php foreach($meiti as $v):?>
+                            <a href="">
+                                <img class="" src="<?php echo ADMIMG.$v['logo']?>" >
+                            </a>
+                            <?php endforeach;?>
+                    <?php endif?>
                 </div>
             </div>
             <!-- <div class="home_d3 fl">

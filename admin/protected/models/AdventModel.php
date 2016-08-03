@@ -50,6 +50,18 @@ class AdventModel extends CommonModel{
         $sql="select * from `jls_advent` where id=:id";
         return Yii::app()->db->createCommand($sql)->bindParam(':id',$id)->queryRow();
     }
+    function EditAdv($data){
+        $arr=array('id'=>$data['id']);
+           $adv['title']= $data['title'];
+        $adv['url']= $data['url'];
+        $adv['img']= $data['img'];
+        $adv['showname']= $data['showname'];
+        $adv['type']=isset($data['type'])?$data['type']:0;
+        $adv['status']= isset($data['status'])?$data['status']:0;
+        $adv['show']= $data['show'];
+       return  $this->setData('jls_advent',$adv,$arr);
+
+    }
 
 
 

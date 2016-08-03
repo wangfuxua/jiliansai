@@ -83,6 +83,23 @@ class AdventController extends CommonController{
         $id=Yii::app()->request->getParam('id');
         $video=new AdventModel();
         $r=$video->GetVById($id);
+        $data=[
+            0=>[
+                'id'=>'home_banner',
+                'name'=>'首页banner',
+            ],
+            1=>[
+                'id'=>'home_adv1',
+                'name'=>'首页广告1',
+            ],
+            2=>[
+                'id'=>'home_adv2',
+                'name'=>'首页广告2',
+            ]
+        ];
+        $data['weizhi']=$data;
+
+        $data['data']=$r;
         $this->render('edit',$data);
     }
 
@@ -93,11 +110,11 @@ class AdventController extends CommonController{
         $data['showname']=$this->GetShowname($data['show']);
         $m=new AdventModel();
         $video=new AdventModel();
-        $r=$video->EditV($data);
+        $r=$video->EditAdv($data);
         if($r){
-            $this->redirect('/video/List');
+            $this->redirect('/Advent/List');
         }else{
-            $this->redirect('/video/add/error/添加失败');
+            $this->redirect('/Advent/add/error/添加失败');
         }
     }
 
