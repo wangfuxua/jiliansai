@@ -157,7 +157,7 @@ class ItemModel extends CommonModel{
         $data=$model->queryAll();
         foreach($data as $k=>$v){
             $data[$k]['bmnum']=$this->GetTnumByG($v['id']);
-            $data[$k]['fznum']=$this->GetTnumByG($v['turn'],$v['id']);
+            $data[$k]['fznum']=$this->GetGnumByG($v['turn'],$v['id']);
         }
 //        var_dump($data);die;
         return array('data'=>$data,'page'=>$page);

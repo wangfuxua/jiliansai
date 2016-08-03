@@ -46,7 +46,7 @@ class ItemController extends CommonController{
         $m=new ItemModel();
         $data['gameid']=$gameid= Yii::app()->request->getParam('gameid');
         $data['uid']= $uid=Yii::app()->user->id;
-        $data['name']=$name= Yii::app()->request->getParam('name');
+            $data['name']=$name= Yii::app()->request->getParam('name');
         $data['phone']=$phone= Yii::app()->request->getParam('phone');
       $vercode= Yii::app()->request->getParam('vercode');
         $imgcode= Yii::app()->request->getParam('imgcode');
