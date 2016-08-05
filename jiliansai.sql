@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2016-08-01 19:14:35
+Date: 2016-08-05 19:38:38
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,7 +29,7 @@ CREATE TABLE `jls_admin_colmns` (
   `url` varchar(120) NOT NULL COMMENT '链接',
   `timeline` int(12) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_admin_colmns
@@ -46,14 +46,14 @@ INSERT INTO `jls_admin_colmns` VALUES ('9', '2', '7', '1', 'channel', '合作方
 INSERT INTO `jls_admin_colmns` VALUES ('10', '2', '7', '1', 'channel', '合作媒体管理', 'channel/meiti', '0');
 INSERT INTO `jls_admin_colmns` VALUES ('11', '2', '7', '1', 'channel', '添加合作', 'channel/addChannel', '0');
 INSERT INTO `jls_admin_colmns` VALUES ('12', '2', '1', '1', 'item', '比赛管理', 'item/games', '0');
-INSERT INTO `jls_admin_colmns` VALUES ('13', '1', '0', '1', 'Users', '会员管理', '#', '0');
-INSERT INTO `jls_admin_colmns` VALUES ('14', '2', '13', '1', 'Users', '会员列表', 'users/list', '0');
-INSERT INTO `jls_admin_colmns` VALUES ('15', '1', '0', '1', 'Video', '比赛视频管理', '#', '0');
-INSERT INTO `jls_admin_colmns` VALUES ('16', '2', '15', '1', 'Video', '视频列表', 'video/list', '0');
-INSERT INTO `jls_admin_colmns` VALUES ('17', '2', '15', '1', 'Video', '视频添加', 'video/add', '0');
-INSERT INTO `jls_admin_colmns` VALUES ('18', '1', '0', '1', 'Advent', '广告管理', '#', '0');
-INSERT INTO `jls_admin_colmns` VALUES ('19', '2', '18', '1', 'Advent', '广告列表', 'Advent/list', '0');
-INSERT INTO `jls_admin_colmns` VALUES ('20', '2', '18', '1', 'Advent', '添加广告', 'Advent/add', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('13', '1', '0', '1', 'users', '会员管理', '#', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('14', '2', '13', '1', 'users', '会员列表', 'users/list', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('15', '1', '0', '1', 'video', '比赛视频管理', '#', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('16', '2', '15', '1', 'video', '视频列表', 'video/list', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('17', '2', '15', '1', 'video', '视频添加', 'video/add', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('18', '1', '0', '1', 'advent', '广告管理', '#', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('19', '2', '18', '1', 'advent', '广告列表', 'Advent/list', '0');
+INSERT INTO `jls_admin_colmns` VALUES ('20', '2', '18', '1', 'advent', '添加广告', 'Advent/add', '0');
 
 -- ----------------------------
 -- Table structure for jls_admin_users
@@ -90,12 +90,14 @@ CREATE TABLE `jls_advent` (
   `show` varchar(255) NOT NULL COMMENT '展示位置',
   `timeline` int(11) NOT NULL COMMENT '时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_advent
 -- ----------------------------
 INSERT INTO `jls_advent` VALUES ('1', 'ceshi', 'www.baidu.com', 'attachment/jls/16/08/20160801131724157.jpg', '首页banner', '1', '1', 'home_banner', '1470029101');
+INSERT INTO `jls_advent` VALUES ('2', '广告12', '/', 'attachment/jls/16/08/20160802103401824.jpg', '首页广告1', '1', '1', 'home_adv1', '1470105245');
+INSERT INTO `jls_advent` VALUES ('3', '广告2', '312312', 'attachment/jls/16/08/20160802103431236.jpg', '首页广告2', '0', '1', 'home_adv2', '1470105275');
 
 -- ----------------------------
 -- Table structure for jls_channels
@@ -155,6 +157,7 @@ CREATE TABLE `jls_fights` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `teamA` int(11) NOT NULL DEFAULT '0' COMMENT 'A队',
   `teamB` int(11) NOT NULL DEFAULT '0' COMMENT 'B队',
+  `winteam` int(11) NOT NULL COMMENT '胜利队伍',
   `starttime` int(11) NOT NULL COMMENT '对战时间',
   `group_id` int(11) NOT NULL,
   `turn` int(11) NOT NULL COMMENT '轮次',
@@ -202,11 +205,19 @@ CREATE TABLE `jls_groups` (
   `tid` int(11) NOT NULL COMMENT '队伍id',
   `timeline` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_groups
 -- ----------------------------
+INSERT INTO `jls_groups` VALUES ('17', '1', '1', '1', '0', '1', '1470391764');
+INSERT INTO `jls_groups` VALUES ('18', '1', '1', '1', '0', '2', '1470391764');
+INSERT INTO `jls_groups` VALUES ('19', '1', '1', '1', '0', '3', '1470391764');
+INSERT INTO `jls_groups` VALUES ('20', '1', '1', '1', '0', '4', '1470391764');
+INSERT INTO `jls_groups` VALUES ('21', '1', '1', '1', '0', '5', '1470391764');
+INSERT INTO `jls_groups` VALUES ('22', '1', '1', '1', '0', '6', '1470391764');
+INSERT INTO `jls_groups` VALUES ('23', '1', '1', '1', '0', '7', '1470391764');
+INSERT INTO `jls_groups` VALUES ('24', '1', '1', '1', '0', '8', '1470391765');
 
 -- ----------------------------
 -- Table structure for jls_items
@@ -297,6 +308,7 @@ CREATE TABLE `jls_teams` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `game_id` int(11) NOT NULL,
   `pro` varchar(255) NOT NULL DEFAULT '0' COMMENT '所在城市',
+  `tname` varchar(255) NOT NULL COMMENT '队伍名',
   `city` varchar(255) NOT NULL COMMENT '所在市',
   `status` int(3) NOT NULL DEFAULT '0' COMMENT '状态 0 未审核',
   `uid` varchar(20) NOT NULL DEFAULT '0' COMMENT '用户id',
@@ -305,11 +317,19 @@ CREATE TABLE `jls_teams` (
   `info` varchar(255) DEFAULT NULL COMMENT '单位/学习 名称',
   `timeline` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_teams
 -- ----------------------------
+INSERT INTO `jls_teams` VALUES ('1', '1', '0', '1号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('2', '1', '0', '2号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('3', '1', '0', '3号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('4', '1', '0', '4号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('5', '1', '0', '5号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('6', '1', '0', '6号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('7', '1', '0', '7号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('8', '1', '0', '8号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
 
 -- ----------------------------
 -- Table structure for jls_team_info
@@ -331,6 +351,7 @@ CREATE TABLE `jls_team_info` (
 -- ----------------------------
 -- Records of jls_team_info
 -- ----------------------------
+INSERT INTO `jls_team_info` VALUES ('1', '1', 'wangfuxu1', '1820103921', '', '', '', '1', '0');
 
 -- ----------------------------
 -- Table structure for jls_users
@@ -432,3 +453,21 @@ INSERT INTO `jls_videos` VALUES ('1', '王福旭', '312312666666666666666666666'
 INSERT INTO `jls_videos` VALUES ('2', '周哈气', '312312', 'http://player.youku.com/player.php/Type/Folder/Fid/27456198/Ob/1/sid/XMTY1NDA3NzI0MA==/v.swf', '0', '1', '', '1', '2', '1469523846');
 INSERT INTO `jls_videos` VALUES ('3', '周哈气', '3412312312312312312', 'http://player.youku.com/player.php/sid/XMTY0MjEyNjEyOA==/v.swf', '0', '1', '', '1', '1', '1469523868');
 INSERT INTO `jls_videos` VALUES ('4', '炉石传说', 'dasdasdas', 'www.baidu.com', '0,1', '1', 'attachment/jls/16/08/20160801190816431.jpg', '1', '2', '1470050035');
+
+-- ----------------------------
+-- Table structure for jls_winteam
+-- ----------------------------
+DROP TABLE IF EXISTS `jls_winteam`;
+CREATE TABLE `jls_winteam` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `fid` int(11) NOT NULL COMMENT '胜利队伍所书的对战id',
+  `turn` int(11) NOT NULL,
+  `gameid` int(11) NOT NULL,
+  `teamid` int(11) NOT NULL,
+  `timeline` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of jls_winteam
+-- ----------------------------
