@@ -15,6 +15,7 @@ class GroupController extends  CommonController{
         $m=new GroupModel();
        $data= $m->GetTeamsByturn($gameid);
         $data['gameid']=$gameid;
+        $data['turn']=$m->GetTurn($gameid);
 //        var_dump($data);die;
         $this->render('index',$data);
     }
@@ -22,6 +23,17 @@ class GroupController extends  CommonController{
         $turn= Yii::app()->request->getParam('turn');
         $gameid= Yii::app()->request->getParam('gameid');
     }
+    function actionAddGroup(){
+        $m=new GroupModel();
+           $data=$_POST;
+        if(empty($data['teamid'])){
+        $this->redirect('/group/index/gameid/'.$data['gameid']);
+        }
+//        var_dump($data);die;
+        $m->AddGroup($data);
+        $this->redirect('/group/index/gameid/'.$data['gameid']);
+    }
+
 
 
 }

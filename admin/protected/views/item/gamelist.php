@@ -67,7 +67,7 @@
                     <td class=" "><?php echo $v['bmnum']?></td>
                     <td class=" "><?php echo $v['fznum']?></td>
                     <td class="hidden-480 "><?php echo date('Y-m-d H:i:s',$v['stime']).'--'.date('Y-m-d H:i:s',$v['etime'])?></td>
-                    <td class="hidden-480 "><a href="">去分组</a> <a href=''>关闭比赛</a></td>
+                    <td class="hidden-480 "><a href="<?php echo base_url('group/index/gameid/'.$v['id'])?>">去分组</a>  <a href='<?php echo base_url()?>'>添加对战</a> <a href=''>关闭比赛</a></td>
                 </tr>
                 <?php endforeach;?>
                 <?php endif;?>

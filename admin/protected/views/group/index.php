@@ -27,7 +27,7 @@
                 <form action="<?php echo base_url('group/searchteam');?>" method="post">
                     <input type="hidden" value="<?php echo $gameid?>" name="gameid">
                 <div class="span6">
-                    <div class="dataTables_filter" id="sample_1_filter" ><label>组别选择:
+                    <div class="dataTables_filter" id="sample_1_filter" ><label>轮次选择:
                             <select  name="turn">
                                 <option>1</option>
                                 <option>2</option>
@@ -39,6 +39,7 @@
 
                 </form>
             </div>
+            <form action="<?php echo base_url('group/AddGroup');?>" method="post">
             <table id="sample_1" class="table table-striped table-bordered table-hover table-full-width dataTable" aria-describedby="sample_1_info">
 
                 <thead>
@@ -55,7 +56,7 @@
                 <tbody role="alert" aria-live="polite" aria-relevant="all">
                 <?php foreach($data as $v):?>
                 <tr class="odd">
-                    <td ><input type="checkbox" id="subcheck"  value="1" name="teamid[]"></td>
+                    <td ><input type="checkbox" id="subcheck"  value="<?php echo $v['id']?>" name="teamid[]"></td>
                     <td class=" "><span class=""><?php echo $v['id']?></span></td>
                     <td class=" sorting_1"><?php echo $v['tname']?></td>
                     <td class=" "><?php echo $v['name']?></td>
@@ -66,7 +67,8 @@
                 <?php endforeach;?>
                </tbody>
                 <tr class="odd">
-                    <form action="" method="get">
+                        <input type="hidden" value="<?php echo $turn?>" name="turn">
+                    <input type="hidden" value="<?php echo $gameid?>" name="gameid">
                     <td class=" "><span class=""><input type="checkbox" onclick="selectAll()" class="group-checkable" id="SelectAll" data-set="#sample_1 .checkboxes"></span></td>
                     <td class=" "><span class="">
                             <select name="goup">

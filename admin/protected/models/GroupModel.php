@@ -19,11 +19,11 @@ class GroupModel extends CommonModel{
             if($turn==1){
 
                 $criteria = new CDbCriteria;
-                $sql="select * from `jls_teams` where game_id={$gameid}";
+                $sql="select a.* from `jls_teams` as a left join `jls_groups` as b on a.game_id=b.game_id  where a.game_id={$gameid} and b.turn!={$turn}";
                 $num=Yii::app()->db->createCommand($sql)->queryScalar();
                 $page=new CPagination($num);
                 $page->pageSize=20;//每页数量
-                $sql="select * from `jls_teams` where game_id={$gameid}";
+                $sql="select a.* from `jls_teams` as a left join `jls_groups` as b on a.game_id=b.game_id  where a.game_id={$gameid} and b.turn!={$turn}";
                 $sql=$sql." limit :offset,:limit";
                 $page->applyLimit($criteria);
                 $model=Yii::app()->db->createCommand($sql);
@@ -125,6 +125,32 @@ class GroupModel extends CommonModel{
 
         return $data;
 
+    }
+    /*
+     * 添加分组
+     * */
+    function AddGroup($data){
+        if(!$data['goup']){
+            $data['goup']=$this->GetGroup($data['gameid'])+1;
+        }
+        foreach($data['teamid'] as $v){
+         $g['game_id']=$data['gameid'];
+        $g['group']=$data['goup'];
+        $g['turn']=$data['turn'];
+        $g['tid']=$v;
+        $g['timeline']=time();
+            $this->addData('jls_groups',$g);
+        }
+    }
+
+    function GetGroup($gameid){
+        $sql="select `group` from  `jls_groups` where game_id={$gameid} order by `group` desc limit 1";
+        $r=  Yii::app()->db->createCommand($sql)->queryScalar();
+        if($r){
+            return $r;
+        }else{
+            return 0;
+        }
     }
 
 }
