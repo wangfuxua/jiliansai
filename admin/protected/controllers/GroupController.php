@@ -14,8 +14,14 @@ class GroupController extends  CommonController{
         $gameid= Yii::app()->request->getParam('gameid');
         $m=new GroupModel();
        $data= $m->GetTeamsByturn($gameid);
+        $data['gameid']=$gameid;
 //        var_dump($data);die;
         $this->render('index',$data);
     }
+    function actionSearchteam(){
+        $turn= Yii::app()->request->getParam('turn');
+        $gameid= Yii::app()->request->getParam('gameid');
+    }
+
 
 }
