@@ -33,6 +33,33 @@ class GroupController extends  CommonController{
         $m->AddGroup($data);
         $this->redirect('/group/index/gameid/'.$data['gameid']);
     }
+    /*
+     * 添加对战信息
+     * */
+     function actionFlight(){
+         $data['gameid']=  $gameid= Yii::app()->request->getParam('gameid');
+         $group= Yii::app()->request->getParam('group');
+         if(!$group){
+             $group=1;
+         }
+         $data['dqgroup']=$group;
+         $m=new GroupModel();
+         $data['turn']=$m->GetTurn($gameid); //获取轮次
+         $data['group']=$m->GetGroup($gameid);//获取所有小组
+        $data['data']=$m->GetTinfoByG($gameid, $data['turn'],$group);
+         $this->render('fight',$data);
+//         var_dump($data);
+
+     }
+    /*
+     * 添加对战动作
+     * */
+    function actionAddFight(){
+        $data=$_POST;
+        var_dump($data);
+    }
+
+
 
 
 

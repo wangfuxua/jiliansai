@@ -120,9 +120,12 @@ class GroupModel extends CommonModel{
      * h获取某个小组的队伍信息
      * */
     function GetTinfoByG($gameid,$turn,$group){
-            $sql="select * from `jls_groups` where game_id={$gameid} and turn={$turn} and group={$gameid}";
+            $sql="select * from `jls_groups` where game_id={$gameid} and turn={$turn} and `group`={$gameid}";
             $data=Yii::app()->db->createCommand($sql)->queryAll();
-
+        foreach($data as $k=>$v){
+           $ta=$this->GetTname($v['tid']);
+            $data[$k]['tname']=$ta['tname'];
+        }
         return $data;
 
     }
@@ -142,7 +145,9 @@ class GroupModel extends CommonModel{
             $this->addData('jls_groups',$g);
         }
     }
-
+    /*
+     * 获取比赛当前轮次的所有小组
+     * */
     function GetGroup($gameid){
         $sql="select `group` from  `jls_groups` where game_id={$gameid} order by `group` desc limit 1";
         $r=  Yii::app()->db->createCommand($sql)->queryScalar();
