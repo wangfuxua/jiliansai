@@ -18,7 +18,7 @@ class GroupController extends  CommonController{
         $data['gameid']=$gameid;
         if(!$turn){
         $data['turn']=$m->GetTurn($gameid);
-        }
+            }
 //        var_dump($data);die;
         $this->render('index',$data);
     }

@@ -68,4 +68,13 @@ class commonModel extends CFormModel {
         $command = Yii::app()->db->createCommand();
         return $command->update($table, $columns, $conditions, $params);
     }
+    /*
+     * 获取战队的信息
+     * */
+    public function GetTinfo($tid){
+            $sql="select * from `jls_teams` where id={$tid}";
+        return Yii::app()->db->createCommand($sql)->queryRow();
+    }
+
+
 }
