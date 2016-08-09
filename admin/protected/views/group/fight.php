@@ -8,11 +8,11 @@
 
     <div class="portlet-title">
 
-        <div class="caption"><i class="icon-globe"></i>list</div>
+        <div class="caption"><i class="icon-globe"></i><a href="<?php echo base_url('item/games');?>"><<返回比赛列表</a></div>
 
         <div class="tools">
 
-            <a class="reload" href="">&nbsp</a>
+            <a class="reload" href=""></a>
 
             <a class="remove" href="javascript:;"></a>
 
@@ -24,14 +24,18 @@
 
         <div role="grid" class="dataTables_wrapper form-inline" id="sample_1_wrapper">
             <div class="row-fluid">
-                <form action="<?php echo base_url('group/searchGroup');?>" method="post">
+                <form action="<?php echo base_url('group/Flight');?>" method="post">
                     <input type="hidden" value="<?php echo $gameid?>" name="gameid">
                 <div class="span6">
                     <div class="dataTables_filter" id="sample_1_filter" ><label>小组选择:
-                            <select  name="turn">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                            <select  name="group">
+                                <?php if($group==0 || empty($group)):?>
+                                    <option value="1">1</option>
+                                <?php else:?>
+                                <?php foreach($group as $v):?>
+                                <option value="<?php echo $v['group']?>"><?php echo $v['group']?></option>
+                                <?php endforeach;?>
+                                <?php endif;?>
                             </select>
                     </div>
                 </div>
@@ -74,7 +78,7 @@
                     <form action="<?php echo base_url('group/AddFight');?>" method="post">
                         <input type="hidden" value="<?php echo $turn?>" name="turn">
                         <input type="hidden" value="<?php echo $dqgroup?>" name="group">
-                    <input type="hidden" value="<?php echo $gameid?>" name="gameid">
+                        <input type="hidden" value="<?php echo $gameid?>" name="gameid">
 
                     <td class=" "><span class="">
                            队伍1： <input type="text" id="team1" value="" >
@@ -84,6 +88,7 @@
                           队伍2： <input type="text" value="" id="team2" name="teamB">
                                <input type="hidden" id="team2id" value="" name="teamB">
                     </span></td>
+                        <td>比赛开始时间<input type="text" name="stime" value="" placeholder="实例：2016-10-01"></td>
                         <td class=" ">
                     <input type="submit"  value="添加对战">
                         </td>

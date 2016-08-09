@@ -8,7 +8,7 @@
 
     <div class="portlet-title">
 
-        <div class="caption"><i class="icon-globe"></i>list</div>
+        <div class="caption"><i class="icon-globe"></i><a href="<?php echo base_url('item/games');?>"><<返回比赛列表</a></div>
 
         <div class="tools">
 
@@ -29,9 +29,10 @@
                 <div class="span6">
                     <div class="dataTables_filter" id="sample_1_filter" ><label>轮次选择:
                             <select  name="turn">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
+                                <?php for($i=1;$i<=$turn;$i++):?>
+                                <option value="<?php echo $i?>"><?php echo $i?></option>
+                                <?php endfor;?>
+
                             </select>
                     </div>
                 </div>

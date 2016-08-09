@@ -12,10 +12,13 @@ class GroupController extends  CommonController{
     }
     function actionIndex(){
         $gameid= Yii::app()->request->getParam('gameid');
+        $data['turn']=$turn=Yii::app()->request->getParam('turn',0);
         $m=new GroupModel();
-       $data= $m->GetTeamsByturn($gameid);
+       $data= $m->GetTeamsByturn($gameid,$turn);
         $data['gameid']=$gameid;
+        if(!$turn){
         $data['turn']=$m->GetTurn($gameid);
+        }
 //        var_dump($data);die;
         $this->render('index',$data);
     }
@@ -46,6 +49,7 @@ class GroupController extends  CommonController{
          $m=new GroupModel();
          $data['turn']=$m->GetTurn($gameid); //获取轮次
          $data['group']=$m->GetGroup($gameid);//获取所有小组
+//         var_dump($data);die;
         $data['data']=$m->GetTinfoByG($gameid, $data['turn'],$group);
          $this->render('fight',$data);
 //         var_dump($data);
@@ -56,7 +60,11 @@ class GroupController extends  CommonController{
      * */
     function actionAddFight(){
         $data=$_POST;
-        var_dump($data);
+        $m=new GroupModel();
+      $r= $m->AddFight($data);
+      $this->redirect('/group/Flight/gameid/'.$data['gameid']);
+
+//        var_dump($data);
     }
 
 

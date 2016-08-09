@@ -13,8 +13,10 @@ class GroupModel extends CommonModel{
     /*
      * 获取需要分组的队伍信息
      * */
-     function GetTeamsByturn($gameid){
+     function GetTeamsByturn($gameid,$turn=0){
+         if(!$turn){
             $turn=$this->GetTurn($gameid);
+         }
 //         echo $turn;die;
             if($turn==1){
 
@@ -72,18 +74,47 @@ class GroupModel extends CommonModel{
         $sql="select `turn` from `jls_games` where id={$gameid}";
         return Yii::app()->db->createCommand($sql)->queryScalar();
     }
+
     /*
      * 添加比赛
      * */
     function AddFight($data){
-        $fi['teamA']=$data['teama'];
-        $fi['teamB']=$data['teamb'];
-        $fi['starttime']=$data['stime'];
-        $fi['group_id']=$data['groupid'];
+        $fi['teamA']=$data['teamA'];
+        $fi['teamB']=$data['teamB'];
+        $fi['starttime']=strtotime($data['stime']);
+        $fi['group_id']=$data['group'];
         $fi['turn']=$data['turn'];
         $fi['timeline']=time();
-        return $this->addData('jls_fights',$fi);
+        $r= $this->addData('jls_fights',$fi);
+        if($r){
+            $u=1;
+            while($u){
+             $ru= $this->UpGroupT($data['gameid'],$data['group'],$data['turn'],$data['teamA']);
+                if($ru){
+                    $u=0;
+                }
+            }
+            $u=1;
+            while($u){
+                $ru1= $this->UpGroupT($data['gameid'],$data['group'],$data['turn'],$data['teamB']);
+                if($ru1){
+                    $u=0;
+                }
+            }
+            return 1;
+        }else{
+            return 0;
+        }
     }
+    /*
+     * 更新新组队伍信息
+     * */
+    function UpGroupT($gameid,$group,$turn,$tid){
+
+        $sql="update `jls_groups` set status=1 where game_id={$gameid} and `turn`={$turn} and `group`={$group} and tid={$tid}";
+       return  Yii::app()->db->createCommand($sql)->execute();
+    }
+
    /*
     * 获取比赛
     * */
@@ -120,7 +151,7 @@ class GroupModel extends CommonModel{
      * h获取某个小组的队伍信息
      * */
     function GetTinfoByG($gameid,$turn,$group){
-            $sql="select * from `jls_groups` where game_id={$gameid} and turn={$turn} and `group`={$gameid}";
+            $sql="select * from `jls_groups` where game_id={$gameid} and turn={$turn} and `group`={$group} and status=0";
             $data=Yii::app()->db->createCommand($sql)->queryAll();
         foreach($data as $k=>$v){
            $ta=$this->GetTname($v['tid']);
@@ -149,8 +180,8 @@ class GroupModel extends CommonModel{
      * 获取比赛当前轮次的所有小组
      * */
     function GetGroup($gameid){
-        $sql="select `group` from  `jls_groups` where game_id={$gameid} order by `group` desc limit 1";
-        $r=  Yii::app()->db->createCommand($sql)->queryScalar();
+        $sql="select `group` from  `jls_groups` where game_id={$gameid} group by `group`   ";
+        $r=  Yii::app()->db->createCommand($sql)->queryAll();
         if($r){
             return $r;
         }else{
