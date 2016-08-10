@@ -24,7 +24,7 @@
 
         <div role="grid" class="dataTables_wrapper form-inline" id="sample_1_wrapper">
             <div class="row-fluid">
-                <form action="<?php echo base_url('group/searchteam');?>" method="post">
+                <form action="<?php echo base_url('group/index');?>" method="get">
                     <input type="hidden" value="<?php echo $gameid?>" name="gameid">
                 <div class="span6">
                     <div class="dataTables_filter" id="sample_1_filter" ><label>轮次选择:

@@ -12,13 +12,13 @@ class GroupController extends  CommonController{
     }
     function actionIndex(){
         $gameid= Yii::app()->request->getParam('gameid');
-        $data['turn']=$turn=Yii::app()->request->getParam('turn',0);
+       $turn=Yii::app()->request->getParam('turn',0);
         $m=new GroupModel();
        $data= $m->GetTeamsByturn($gameid,$turn);
         $data['gameid']=$gameid;
-        if(!$turn){
         $data['turn']=$m->GetTurn($gameid);
-            }
+            $data['dqturn']=$turn;
+
 //        var_dump($data);die;
         $this->render('index',$data);
     }

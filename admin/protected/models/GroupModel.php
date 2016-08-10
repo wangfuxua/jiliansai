@@ -21,7 +21,8 @@ class GroupModel extends CommonModel{
             if($turn==1){
 
                 $criteria = new CDbCriteria;
-                 $sql="select count(1) from `jls_teams` as a  where a.game_id={$gameid} and a.id not in(select  tid from `jls_groups` where game_id={$gameid} and turn={$turn}) ";
+                  $sql="select count(1) from `jls_teams` as a  where a.game_id={$gameid} and a.id not in(select  tid from `jls_groups` where game_id={$gameid} and turn={$turn}) ";
+
                 $num=Yii::app()->db->createCommand($sql)->queryScalar();
                 $page=new CPagination($num);
                 $page->pageSize=20;//每页数量
@@ -39,11 +40,11 @@ class GroupModel extends CommonModel{
                  * 获取所有的分组
                  * */
                 $criteria = new CDbCriteria;
-                $sql="select  `winteam`  from `jls_fights` where `group_id`=1 and `turn`={$turn}";
+                $sql="select  `teamid`  from `jls_winteam` where `gameid`={$gameid} and `turn`={$turn}";
                 $num=Yii::app()->db->createCommand($sql)->queryScalar();
                 $page=new CPagination($num);
                 $page->pageSize=20;//每页数量
-                $sql="select  `winteam`  from `jls_fights` where `group_id`=1 and `turn`={$turn}";
+                $sql="select  b.*  from `jls_winteam` as a left join `jls_teams` as b on a.teamid=b.id  where a. `gameid`={$gameid} and a.`turn`={$turn}";
                 $sql=$sql." limit :offset,:limit";
                 $model=Yii::app()->db->createCommand($sql);
                 $model->bindValue(':offset',$page->currentPage*$page->pageSize);

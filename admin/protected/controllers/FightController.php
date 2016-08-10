@@ -18,8 +18,35 @@ class FightController extends CommonController{
         $group=Yii::app()->request->getParam('group',0);
         $turn=Yii::app()->request->getParam('turn',0);
         $m=new FightModel();
-        $data['list']=$m->GetInfoByG($ganeid,$turn,$group);
+        $data=$m->GetInfoByG($ganeid,$turn,$group);
+        $m2=new GroupModel();
+        $data['group']=$m2->GetGroup($ganeid);//获取所有小组
+        $data['gameid']=$ganeid;
+//        var_dump($data);die;
         $this->render('list',$data);
-
     }
+    /*
+     * 对战信息更新
+     * 胜利队伍入库
+     * */
+   function actionUpFight(){
+       $fid=Yii::app()->request->getParam('fid',0);
+       $tid=Yii::app()->request->getParam('tid',0);
+       $m=new FightModel();
+       $data=$m->GetInfoByid($fid);
+        $add['fid']=$fid;
+        $add['turn']=$data['turn']+1;
+        $add['gameid']=$data['gameid'];
+        $add['teamid']=$tid;
+        $r=$m->AddWinT($add);
+       if($r){
+           $up['tid']=$tid;
+           $up['fid']=$fid;
+            $m->UpFi($up);
+           echo 1;
+       }else{
+            echo 0;
+       }
+
+   }
 }

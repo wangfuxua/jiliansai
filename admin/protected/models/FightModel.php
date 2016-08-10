@@ -26,12 +26,12 @@ class FightModel extends CommonModel{
      * 获取指定的比赛的某个轮次的某个小组的所有对战
      *  默认获取当前轮次的第一小组的对战信息
      * */
-    function GetInfoByG($gameid,$trun=0;$group=1){
+    function GetInfoByG($gameid,$turn=0,$group=1){
            if(!$turn){
             $gr=new GroupModel();
             $trun=  $gr->GetTurn($gameid);
         }
-        $where=' where 1';
+        $where=' where 1 ';
         if($gameid){
             $where.=' and gameid='.$gameid;
         }
@@ -54,7 +54,7 @@ class FightModel extends CommonModel{
         $model->bindValue(':limit',$page->pageSize);
         $data=$model->queryAll();
         if(!empty($data) and is_array($data)){
-            foreach($data as $k->$v){
+            foreach($data as $k=>$v){
                 $data[$k]['ainfo']=$this->GetTinfo($v['teamA']);
                 $data[$k]['binfo']=$this->GetTinfo($v['teamB']);
             }
@@ -66,13 +66,28 @@ class FightModel extends CommonModel{
     * 添加比赛胜利队伍
     * */
         function AddWinT($data){
+            $sql="select id from `jls_winteam` where fid={$data['fid']} and turn={$data['turn']} and gameid={$data['gameid']} and teamid={$data['teamid']} ";
+            $r=Yii::app()->db->createCommand($sql)->queryScalar();
+            if($r){
+                return 1;
+            }else{
             $wi['fid']=$data['fid'];//胜利队伍所书的对战id
             $wi['turn']=$data['turn'];//队伍进入到的轮次
             $wi['gameid']=$data['gameid'];//队伍所属的比赛
             $wi['teamid']=$data['teamid'];
             $wi['timeline']=time();
             return $this->addData('jls_winteam',$wi);
+            }
         }
 
+    /*
+     * 更新对战信息
+     * */
+    function UpFi($data){
+            $ar=array('id'=>$data['fid']);
+        $up['status']=0;
+              $up['winteam']=$data['tid'];
+           return $this->setData('jls_fights',$up,$ar);
+    }
 
 }
