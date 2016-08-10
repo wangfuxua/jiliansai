@@ -21,11 +21,11 @@ class GroupModel extends CommonModel{
             if($turn==1){
 
                 $criteria = new CDbCriteria;
-                $sql="select count(1) from `jls_teams` as a left join `jls_groups` as b on a.game_id=b.game_id  where a.game_id={$gameid} and b.turn!={$turn}";
+                 $sql="select count(1) from `jls_teams` as a  where a.game_id={$gameid} and a.id not in(select  tid from `jls_groups` where game_id={$gameid} and turn={$turn}) ";
                 $num=Yii::app()->db->createCommand($sql)->queryScalar();
                 $page=new CPagination($num);
                 $page->pageSize=20;//每页数量
-                $sql="select a.* from `jls_teams` as a left join `jls_groups` as b on a.game_id=b.game_id  where a.game_id={$gameid} and b.turn!={$turn}";
+                $sql="select a.* from `jls_teams` as a   where a.game_id={$gameid} and a.id not in(select  tid from `jls_groups` where game_id={$gameid} and turn={$turn}) ";
                 $sql=$sql." limit :offset,:limit";
                 $page->applyLimit($criteria);
                 $model=Yii::app()->db->createCommand($sql);

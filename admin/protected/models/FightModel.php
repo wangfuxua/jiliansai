@@ -31,12 +31,22 @@ class FightModel extends CommonModel{
             $gr=new GroupModel();
             $trun=  $gr->GetTurn($gameid);
         }
+        $where=' where 1';
+        if($gameid){
+            $where.=' and gameid='.$gameid;
+        }
+        if($trun){
+            $where.=' and turn='.$trun;
+        }
+        if($group){
+            $where.=' and group_id='.$group;
+        }
         $criteria = new CDbCriteria;
-        $sql="select count(1) from `jls_fights` where group_id={$group} and gameid={$gameid} and turn={$trun}";
+        $sql="select count(1) from `jls_fights` ".$where;
         $num=Yii::app()->db->createCommand($sql)->queryScalar();
         $page=new CPagination($num);
         $page->pageSize=20;//每页数量
-        $sql="select * from `jls_fights` where group_id={$group} and gameid={$gameid} and turn={$trun}";
+        $sql="select * from `jls_fights` ".$where;
         $sql=$sql." limit :offset,:limit";
         $page->applyLimit($criteria);
         $model=Yii::app()->db->createCommand($sql);
