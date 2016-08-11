@@ -24,16 +24,28 @@
 
                 <div role="grid" class="dataTables_wrapper form-inline" id="sample_1_wrapper">
                     <div class="row-fluid">
-                        <form action="<?php echo base_url('group/Flight');?>" method="post">
+                        <form action="<?php echo base_url('Fight/list');?>" method="get">
                             <input type="hidden" value="<?php echo $gameid?>" name="gameid">
                             <div class="span6">
+                                <div class="dataTables_filter" id="sample_1_filter"  style="float: left"><label>轮次选择:
+                                        <select  name="turn">
+                                            <option value="0">无</option>
+                                            <?php for($i=1;$i<=$turn;$i++):?>
+                                                <option value="<?php echo$i?>" <?php if( $i==$dqturn){echo "selected='true'";}?>><?php echo $i?></option>
+                                            <?php endfor;?>
+
+                                        </select>
+                                </div>
+
+
                                 <div class="dataTables_filter" id="sample_1_filter" ><label>小组选择:
                                         <select  name="group">
                                             <?php if($group==0 || empty($group)):?>
                                                 <option value="1">1</option>
                                             <?php else:?>
+                                                <option value="0">无</option>
                                                 <?php foreach($group as $v):?>
-                                                    <option value="<?php echo $v['group']?>"><?php echo $v['group']?></option>
+                                                    <option value="<?php echo $v['group']?>" <?php if(  $v['group']==$dqgroup){echo "selected='true'";}?>><?php echo $v['group']?></option>
                                                 <?php endforeach;?>
                                             <?php endif;?>
                                         </select>

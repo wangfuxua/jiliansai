@@ -20,8 +20,11 @@ class FightController extends CommonController{
         $m=new FightModel();
         $data=$m->GetInfoByG($ganeid,$turn,$group);
         $m2=new GroupModel();
+        $data['turn']=$m2->GetTurn($ganeid); //获取轮次
         $data['group']=$m2->GetGroup($ganeid);//获取所有小组
         $data['gameid']=$ganeid;
+        $data['dqturn']=$turn;
+        $data['dqgroup']=$group;
 //        var_dump($data);die;
         $this->render('list',$data);
     }

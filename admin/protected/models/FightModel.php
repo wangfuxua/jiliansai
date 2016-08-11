@@ -26,10 +26,10 @@ class FightModel extends CommonModel{
      * 获取指定的比赛的某个轮次的某个小组的所有对战
      *  默认获取当前轮次的第一小组的对战信息
      * */
-    function GetInfoByG($gameid,$turn=0,$group=1){
-           if(!$turn){
+    function GetInfoByG($gameid,$trun=0,$group=1){
+           if(!$trun){
             $gr=new GroupModel();
-            $trun=  $gr->GetTurn($gameid);
+            $trun=  $gr->GetTurn($gameid)-1;
         }
         $where=' where 1 ';
         if($gameid){

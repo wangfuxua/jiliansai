@@ -74,7 +74,11 @@
                     <td class=" "><span class="">
                             <select name="goup">
                                 <option value="0">添加为一个新组</option>
-                                <option value="1">组1</option>
+                                <?php if(!empty($group)):?>
+                                    <?php foreach($group as $v):?>
+                                <option value="<?php echo $v['group']?>">组<?php echo $v['group']?></option>
+                                        <?php endforeach;?>
+                                <?php endif;?>
                             </select>
                     </span></td>
                         <td class=" ">
