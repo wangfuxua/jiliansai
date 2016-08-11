@@ -51,7 +51,7 @@ class GroupController extends  CommonController{
 
          $data['turn']=$m->GetTurn($gameid); //获取轮次
              $data['dqturn']=$turn;
-         $data['group']=$m->GetGroup($gameid);//获取所有小组
+         $data['group']=$m->GetGroups($gameid,$turn);//获取所有小组
          $data['dqgroup']=$group;
         $data['data']=$m->GetTinfoByG($gameid, $data['dqturn'],$group);
 //         var_dump($data);die;
