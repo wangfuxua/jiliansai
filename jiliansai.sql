@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2016-08-09 18:16:03
+Date: 2016-08-12 16:34:00
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -162,14 +162,19 @@ CREATE TABLE `jls_fights` (
   `group_id` int(11) NOT NULL,
   `gameid` int(11) NOT NULL,
   `turn` int(11) NOT NULL COMMENT '轮次',
+  `status` int(2) NOT NULL DEFAULT '1' COMMENT '1 比赛进行中 0 比赛已经结束',
   `timeline` int(11) NOT NULL COMMENT '时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_fights
 -- ----------------------------
-INSERT INTO `jls_fights` VALUES ('2', '5', '6', '0', '1473436800', '1', '0', '1', '1470724151');
+INSERT INTO `jls_fights` VALUES ('2', '5', '6', '5', '1473436800', '1', '1', '1', '0', '1470724151');
+INSERT INTO `jls_fights` VALUES ('5', '1', '2', '1', '1471276800', '1', '1', '1', '0', '1470810611');
+INSERT INTO `jls_fights` VALUES ('6', '7', '8', '0', '1473436800', '1', '1', '1', '1', '1470823516');
+INSERT INTO `jls_fights` VALUES ('7', '4', '3', '0', '1471276800', '2', '1', '1', '1', '1470905946');
+INSERT INTO `jls_fights` VALUES ('8', '5', '1', '0', '1469376000', '1', '1', '2', '1', '1470908555');
 
 -- ----------------------------
 -- Table structure for jls_games
@@ -191,7 +196,7 @@ CREATE TABLE `jls_games` (
 -- ----------------------------
 -- Records of jls_games
 -- ----------------------------
-INSERT INTO `jls_games` VALUES ('1', '1', '3', '1468899517', '1', '1', '1475942400', '2', '1468899528');
+INSERT INTO `jls_games` VALUES ('1', '1', '3', '1468899517', '3', '1', '1475942400', '2', '1468899528');
 INSERT INTO `jls_games` VALUES ('2', '1', '3', '1469777850', '1', '1', '1475164800', '1', '1469777864');
 
 -- ----------------------------
@@ -207,19 +212,21 @@ CREATE TABLE `jls_groups` (
   `tid` int(11) NOT NULL COMMENT '队伍id',
   `timeline` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_groups
 -- ----------------------------
-INSERT INTO `jls_groups` VALUES ('17', '1', '1', '1', '0', '1', '1470391764');
-INSERT INTO `jls_groups` VALUES ('18', '1', '1', '1', '0', '2', '1470391764');
-INSERT INTO `jls_groups` VALUES ('19', '1', '2', '1', '0', '3', '1470391764');
-INSERT INTO `jls_groups` VALUES ('20', '1', '2', '1', '0', '4', '1470391764');
+INSERT INTO `jls_groups` VALUES ('17', '1', '1', '1', '1', '1', '1470391764');
+INSERT INTO `jls_groups` VALUES ('18', '1', '1', '1', '1', '2', '1470391764');
+INSERT INTO `jls_groups` VALUES ('19', '1', '2', '1', '1', '3', '1470391764');
+INSERT INTO `jls_groups` VALUES ('20', '1', '2', '1', '1', '4', '1470391764');
 INSERT INTO `jls_groups` VALUES ('21', '1', '1', '1', '1', '5', '1470391764');
 INSERT INTO `jls_groups` VALUES ('22', '1', '1', '1', '1', '6', '1470391764');
-INSERT INTO `jls_groups` VALUES ('23', '1', '1', '1', '0', '7', '1470391764');
-INSERT INTO `jls_groups` VALUES ('24', '1', '1', '1', '0', '8', '1470391765');
+INSERT INTO `jls_groups` VALUES ('23', '1', '1', '1', '1', '7', '1470391764');
+INSERT INTO `jls_groups` VALUES ('25', '1', '2', '1', '0', '8', '1470905253');
+INSERT INTO `jls_groups` VALUES ('26', '1', '1', '2', '1', '5', '1470908415');
+INSERT INTO `jls_groups` VALUES ('27', '1', '1', '2', '1', '1', '1470908415');
 
 -- ----------------------------
 -- Table structure for jls_items
@@ -468,8 +475,10 @@ CREATE TABLE `jls_winteam` (
   `teamid` int(11) NOT NULL,
   `timeline` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_winteam
 -- ----------------------------
+INSERT INTO `jls_winteam` VALUES ('1', '2', '2', '1', '5', '1470822430');
+INSERT INTO `jls_winteam` VALUES ('3', '5', '2', '1', '1', '1470822743');

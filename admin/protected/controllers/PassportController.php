@@ -9,7 +9,7 @@ class PassportController extends CommonController{
         $this->title = '季联赛';
         Yii::import('application.library.toolkit');
         $this->tool = new toolkit();
-        $this->uid= Yii::app()->session['uid'];
+        $this->uid=  Yii::app()->user->id;
         $m=Yii::app()->request->getParam('logout');;
         if($this->uid && !$m){
             $this->redirect("/index");
@@ -41,16 +41,16 @@ class PassportController extends CommonController{
         $user->username=$username;
         $user->password=$password;
         $r=$user->GoLogin();
-
+//            var_dump($r);die;
         if($r){
-            Yii::app()->user->id=$r['id'];
+            Yii::app()->user->id=$r;
             $this->redirect('/index/index');
         }else{
             $this->redirect('/passport/Login');
         }
     }
   public  function actionLogout(){
-      unset( Yii::app()->session['uid']);
+      unset(Yii::app()->user->id);
       Header("Location: ".base_url('/'));
   }
 

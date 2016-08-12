@@ -9,7 +9,12 @@ class UsersModel extends CommonModel{
         $sql="select * from `jls_admin_users` where  username=:username";
 
         $r= Yii::app()->db->createCommand($sql)->bindParam(':username',$this->username)->queryRow();
-        return $this->CheckPass($this->password,$r['password']);
+        $e= $this->CheckPass($this->password,$r['password']);
+        if($e){
+            return $this->getUId($this->username);
+        }else{
+            return 0;
+        }
 
     }
     /*
@@ -54,6 +59,17 @@ class UsersModel extends CommonModel{
         return array('data'=>$data,'page'=>$page);
     }
 
+    /*
+     * 获取用户的uid
+     * */
+    function getUId($name){
+    $sql="select id from `jls_admin_users` where username='{$name}'";
+        return Yii::app()->db->createCommand($sql)->queryScalar();
+    }
+    function GetUinfo($uid){
+        $sql="select * from `jls_admin_users` where id={$uid}";
+        return Yii::app()->db->createCommand($sql)->queryRow();
+    }
 
 }
 
