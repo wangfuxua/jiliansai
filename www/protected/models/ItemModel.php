@@ -37,7 +37,7 @@ class ItemModel extends CommonModel{
     function Checkgame($gameid){
         $tt=time();
         $sql="select id from `jls_games` where `etime`>{$tt} and stime<{$tt} and status!=0";
-        return Yii::app()->createCommand($sql)->queryScalar();
+        return Yii::app()->db->createCommand($sql)->queryScalar();
     }
     /*
      * 添加报名队伍的联系人信息

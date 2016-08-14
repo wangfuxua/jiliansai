@@ -22,6 +22,7 @@ class ItemController extends CommonController{
         $m=new ItemModel();
 //        echo 4%2;die;
         $data['list']= $m->GetGaems($itemid);
+        $data['itemid']=$itemid;
 //        var_dump($data);die;
         $this->render('game',$data);
     }

@@ -1,7 +1,8 @@
 .c_b1{color: #00CCFF;}
 .c_f{color: #fff;}
-.bg_1{background: #12151a;}
+.bg_1{background:#12151a url(../img/bg_all.jpg) no-repeat center 135px;}
 .content{width: 1200px;margin: 0 auto;}
+.w280{width: 280px;}
 .nav{width: 100%;max-width: 1920px;min-width: 1200px; margin: 0 auto;
 background: url(../img/index/bg_nav.png) no-repeat center 0 ; 
 background-size: 1920px 150px;
@@ -64,9 +65,9 @@ z-index: 990;
 .home_d4{width: 1200px;height: 490px;margin-top: 20px;}
 .home_tit1,.home_tit2{background: #1e2732;color: #fff;}
 .home_d2_con1_tit1{margin: 15px 0;}
-.home_tit1{text-align: center;height: 70px;line-height: 70px;font-size: 26px; font-weight: 500;/*border-bottom: 1px solid #333;*/
-    background: url(../img/index/index_tit2.png) no-repeat 0 0 ; 
-    background-size: 440px 90px;
+.home_tit1{text-align: center;height: 60px;line-height: 60px;font-size: 26px; font-weight: 500;/*border-bottom: 1px solid #333;*/
+    background: url(../img/index/index_tit2.png?1) no-repeat 0 0 ; 
+    background-size: 100% 61px;
 
 }
 .home_tit2{text-align: center;width: 90px; height: 358px;line-height: 358px;font-size: 20px; font-weight: 700;/*border-right: 1px solid #333;*/float: left}
@@ -96,11 +97,11 @@ z-index: 990;
 }
 .home_tab_box .tab_btn {
     background-color: #f0f0f0;
-    height: 70px;
-    line-height: 70px;
+    height: 60px;
+    line-height: 60px;
     margin-top: -1px;
     background: url(../img/index/index_tit1.png) no-repeat 0 0 ; 
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 #zxzx_btn .sel {
     width: 25%;
@@ -124,7 +125,7 @@ z-index: 990;
     color: #cbf7f8;
 }
 .home_tab_box .tab_btn {
-    line-height: 70px;
+    line-height: 60px;
 }
 .home_column {
     /*border-top-color: #e5e5e5;
@@ -256,3 +257,77 @@ z-index: 990;
 .pace.pace-inactive {
     display: none;
 }
+/*视频*/
+.video_listbox{
+	width: 1200px;
+	margin-top: 100px;
+
+}
+.video_l{width: 240px;height: 570px;overflow: hidden; float: left;position: relative;padding: 0 20px; background: rgba(50,50,50,0.53);}
+.video_r{width: 940px;height: 570px;background: green;float: right;}
+.video_r embed{background: #000;}
+.video_nav{position: absolute;top: 40px;left: 20px;width: 200px;height: 500px;overflow: hidden;}
+.video_ul{width: 200px;}
+.video_ul li{
+	width: 200px;height: 90px;display: block;cursor: pointer;border: 1px solid #cbf7f8; 
+	line-height: 90px;color: #cbf7f8;margin-bottom: 10px;text-align: center;
+}
+/*.video_ul li:first-child{border-top: none;}*/
+.video_arr_u,.video_arr_d{height: 30px;width: 200px; line-height: 30px;text-align: center;color: #cbf7f8; position: absolute;cursor: pointer;}
+.video_arr_u{top: 0;left: 20px;background: url(../img/video_arr.png) no-repeat 0 top;  }
+.video_arr_d{bottom: 0;left: 20px;background: url(../img/video_arr.png) no-repeat 0 bottom;   }
+
+.video_teambox{background: rgba(50,50,50,0.53); width: 1200px; }
+
+
+/*报名*/
+.sign_stepbox{height: 60px; margin: 50px auto 0 auto;text-align: center;width: 980px;    
+    background: url(../img/index/index_line1.png) center center no-repeat;
+    background-size: 100%;
+}
+.sign_step{width: 150px;height: 60px;line-height: 60px; font-size: 26px; margin: 0 13px;text-align: center;
+    background: #ddd ;color: #333;border-radius: 30px;display: inline-block;
+}
+.sign_now{background: url(../img/index/index_tit2.png?1) no-repeat 0 0;background-size: 100% 61px;color: #cbf7f8;}
+.sign_box1{
+    width: 600px;margin: 80px auto 0 auto;background: rgba(50,50,50,0.53);position: relative;
+    border:1px solid #111;padding: 80px 0 40px 0 ;color: #fff
+}
+.sign_tit{width: 300px;height: 60px;text-align: center;line-height: 60px;font-size: 26px;
+    position: absolute;left: 150px;top: -30px;
+    background: url(../img/index/index_tit2.png?1) no-repeat 0 0;background-size: 100% 61px;color: #cbf7f8;
+}
+.sign_tit2{width: 100px;display: inline-block;height: 50px;line-height: 50px;text-align: right;padding-right: 10px;vertical-align: middle;}
+.sign_ipt1,.sign_ipt2,.sign_slc1{height: 50px;padding-left: 10px;vertical-align: middle;border:none;color: #333;}
+.sign_ipt1{width: 260px;}
+.sign_ipt2{width: 130px;}
+.sign_slc1{width: 260px;}
+.sign_btn1,.sign_btn3{width: 120px;height: 30px;border-radius: 15px;border:1px solid #333;
+    display: inline-block;line-height: 28px;color: #333;text-align: center;
+}
+.sign_btn1{background: #99ccff;}
+.sign_btn3{background: #fff;}
+
+.sign_btn2{width: 110px;height: 50px;cursor: pointer; text-align: center;border:1px solid #333;display: inline-block;vertical-align: middle;line-height: 50px;float: right;background: #fff;color: #333;}
+.sign_rightbox{width: 260px;display: inline-block;text-align: left;}
+.sign_area{width: 260px;display: inline-block;text-align: left;height: 100px;padding: 5px; color: #333;}
+.sign_ml170{    margin-left: 170px;}
+.sign_row{    margin-left: 90px;}
+.sign_teambox{margin-left: 70px;margin-top: 50px;}
+.sign_team{width:90px;}
+.sign_team li{width:90px;height: 50px;line-height: 44px;text-align: center; border:3px solid #333;margin-bottom: 20px;cursor: pointer;}
+.sign_team li.sign_active{ background: #fff; color: #333;border-color: #aaa;}
+.sign_infobox li{display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
