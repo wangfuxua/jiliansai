@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2016-08-12 16:34:00
+Date: 2016-08-15 16:02:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -318,27 +318,28 @@ CREATE TABLE `jls_teams` (
   `game_id` int(11) NOT NULL,
   `pro` varchar(255) NOT NULL DEFAULT '0' COMMENT '所在城市',
   `tname` varchar(255) NOT NULL COMMENT '队伍名',
-  `city` varchar(255) NOT NULL COMMENT '所在市',
+  `city` varchar(255) NOT NULL DEFAULT '' COMMENT '所在市',
   `status` int(3) NOT NULL DEFAULT '0' COMMENT '状态 0 未审核',
   `uid` varchar(20) NOT NULL DEFAULT '0' COMMENT '用户id',
-  `name` varchar(255) NOT NULL COMMENT '联系人姓名',
-  `phone` int(11) NOT NULL COMMENT '联系人电话',
+  `name` varchar(255) NOT NULL DEFAULT '' COMMENT '联系人姓名',
+  `descript` varchar(255) DEFAULT NULL COMMENT '简介',
+  `phone` char(16) NOT NULL DEFAULT '' COMMENT '联系人电话',
   `info` varchar(255) DEFAULT NULL COMMENT '单位/学习 名称',
   `timeline` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of jls_teams
 -- ----------------------------
-INSERT INTO `jls_teams` VALUES ('1', '1', '0', '1号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
-INSERT INTO `jls_teams` VALUES ('2', '1', '0', '2号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
-INSERT INTO `jls_teams` VALUES ('3', '1', '0', '3号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
-INSERT INTO `jls_teams` VALUES ('4', '1', '0', '4号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
-INSERT INTO `jls_teams` VALUES ('5', '1', '0', '5号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
-INSERT INTO `jls_teams` VALUES ('6', '1', '0', '6号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
-INSERT INTO `jls_teams` VALUES ('7', '1', '0', '7号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
-INSERT INTO `jls_teams` VALUES ('8', '1', '0', '8号', '', '1', '1468919772559805', 'wangsir', '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('1', '1', '0', '1号', '', '1', '1468919772559805', 'wangsir', null, '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('2', '1', '0', '2号', '', '1', '1468919772559805', 'wangsir', null, '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('3', '1', '0', '3号', '', '1', '1468919772559805', 'wangsir', null, '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('4', '1', '0', '4号', '', '1', '1468919772559805', 'wangsir', null, '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('5', '1', '0', '5号', '', '1', '1468919772559805', 'wangsir', null, '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('6', '1', '0', '6号', '', '1', '1468919772559805', 'wangsir', null, '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('7', '1', '0', '7号', '', '1', '1468919772559805', 'wangsir', null, '1861294064', null, '0');
+INSERT INTO `jls_teams` VALUES ('8', '1', '0', '8号', '', '1', '1468919772559805', 'wangsir', null, '1861294064', null, '0');
 
 -- ----------------------------
 -- Table structure for jls_team_info
@@ -349,8 +350,10 @@ CREATE TABLE `jls_team_info` (
   `tid` int(11) NOT NULL COMMENT 'team_id',
   `name` varchar(60) NOT NULL DEFAULT '0' COMMENT '姓名',
   `phone` int(11) NOT NULL COMMENT '手机号',
+  `qq` varchar(20) DEFAULT NULL,
   `email` varchar(255) NOT NULL COMMENT '邮箱',
   `idcard` varchar(255) NOT NULL COMMENT '身份证',
+  `idtype` varchar(3) DEFAULT NULL,
   `author_img` varchar(255) NOT NULL,
   `role` int(11) NOT NULL DEFAULT '0' COMMENT '0  队员  1 队长',
   `timeline` int(11) NOT NULL,
@@ -360,7 +363,7 @@ CREATE TABLE `jls_team_info` (
 -- ----------------------------
 -- Records of jls_team_info
 -- ----------------------------
-INSERT INTO `jls_team_info` VALUES ('1', '1', 'wangfuxu1', '1820103921', '', '', '', '1', '0');
+INSERT INTO `jls_team_info` VALUES ('1', '1', 'wangfuxu1', '1820103921', null, '', '', null, '', '1', '0');
 
 -- ----------------------------
 -- Table structure for jls_users
@@ -380,7 +383,7 @@ CREATE TABLE `jls_users` (
 -- Records of jls_users
 -- ----------------------------
 INSERT INTO `jls_users` VALUES ('1', '1468919673700375', '2147483647', '$P$BeLn2MZeQRX9mpdv6gymW0M3Qjt4mz/', '1468919673');
-INSERT INTO `jls_users` VALUES ('2', '1468919772559805', '18201039216', '$P$BM00qn78QsFemEj.fYDIRFwNywxTPz.', '1468919773');
+INSERT INTO `jls_users` VALUES ('2', '1468919772559805', '18201039216', '$P$BP1fUhJkSSQ1PoCV/rfTYmO8oAuoMq0', '1468919773');
 INSERT INTO `jls_users` VALUES ('8', '1468920649277841', '18612940648', '$P$Bgb3GK.jgkq.INfTMjrdFJVZuLDsfJ0', '1468920649');
 
 -- ----------------------------

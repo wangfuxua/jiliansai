@@ -1,7 +1,12 @@
 <?php
 class ItemController extends CommonController{
+    public $uid;
     function  init(){
         parent::init();
+        $this->uid=Yii::app()->user->id;
+        if(!$this->uid){
+            $this->redirect('/users/Login/errmsg/请先登录');die;
+        }
     }
     /*
      * 报名列表
@@ -17,6 +22,7 @@ class ItemController extends CommonController{
      * 报名比赛选择页面
      * */
     function actionGame(){
+
         $this->layout='main2';
         $itemid= Yii::app()->request->getParam('itemid');
         $m=new ItemModel();
@@ -30,6 +36,7 @@ class ItemController extends CommonController{
      * 报名比赛第二
      * */
     function actionBGanme(){
+        $this->layout='main2';
         $itemid= Yii::app()->request->getParam('itemid');
         $gameid= Yii::app()->request->getParam('gameid');
         $m=new ItemModel();
@@ -38,12 +45,14 @@ class ItemController extends CommonController{
             $this->redirect('/item/game/errmsg/该比赛未开赛或不在报名时间内/itemid/'.$itemid);die;
         }
         $data['gameid']=$gameid;
+//        var_dump($data);die;
         $this->render('bgame',$data);
     }
     /*
      * 报名比赛3
      * */
     function actionCgame(){
+        $this->layout='main2';
         $m=new ItemModel();
         $data['gameid']=$gameid= Yii::app()->request->getParam('gameid');
         $data['uid']= $uid=Yii::app()->user->id;
@@ -52,19 +61,36 @@ class ItemController extends CommonController{
       $vercode= Yii::app()->request->getParam('vercode');
         $imgcode= Yii::app()->request->getParam('imgcode');
         $itemid=$m->GetItemid($gameid);
-      if($imgcode!=$_SESSION['bmauthcode']) {
-          $this->redirect('/item/bgame/itemid/'.$itemid.'/gameid/'.$gameid.'/errmsg/图片验证码错误');
-      }
-
+//      if($imgcode!=$_SESSION['bmauthcode']) {
+//          $this->redirect('/item/bgame/itemid/'.$itemid.'/gameid/'.$gameid.'/errmsg/图片验证码错误');
+//      }
+//var_dump($data);die;
        $r= $m->AddGame1($data);
         if($r){
+            $data['tid']=$r;
+            $data['tinfo']=$m->GetGameinfo($r);
+
             $this->render('cgame',$data);
         }else{
             $this->redirect('/item/bgame/itemid/'.$itemid.'/gameid/'.$gameid.'/errmsg/提交的数据不完整');
         }
-        
     }
 
+/*
+     * 临时保存不跳转页面
+     * */
+    function actionTjgame1(){
+        $m=new ItemModel();
+       $data=$_POST;
+        $data['tinfo']=$m->GetGameinfo($data['tid']);
+        $this->render('cgame',$data);
+    }
+    /*
+     * 提交完整信息  跳转页面
+     * */
+    function actionTjgame2(){
+        var_dump($_POST);
+    }
 
 
     /**

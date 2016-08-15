@@ -21,7 +21,7 @@
                 <span class="sign_tit2">游戏比赛项目</span>
                 <select class="sign_slc1" name="gameid">
                     <?php foreach ($list as $v):?>
-                    <option><?php echo $v['pnum']?>V<?php echo $v['pnum']?></option>
+                    <option value="<?php echo $v['id']?>"><?php echo $v['pnum']?>V<?php echo $v['pnum']?></option>
                     <?php endforeach;?>
                 </select>
             </div>

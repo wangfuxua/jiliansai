@@ -1,107 +1,82 @@
-
-
-    <!-- <script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script> -->
-<style>
-* {
-    PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
-}
-
-.focusWrap {
-    MARGIN: 50px auto; WIDTH: 1200px;  left top; HEIGHT: 500px;background-color: lightslategray;
-}
-.focusCon {
-    WIDTH: 1200px; FLOAT: left;
-}
-.focusR {
-    WIDTH: 236px; DISPLAY: inline; FLOAT: right; HEIGHT: 100%; MARGIN-RIGHT: 10px
-}
-.focusL {
-    POSITION: relative; MARGIN-TOP: 12px; WIDTH: 140px; /*BACKGROUND: url(../img/line.png) repeat-y left top;*/ FLOAT: left; HEIGHT: 500px
-}
-.ulFocus {
-    Z-INDEX: 2; POSITION: relative; WIDTH: 100%; HEIGHT: 100%; TOP: 0px; LEFT: 0px;overflow: hidden;
-}
-.ulFocus LI {
-    LINE-HEIGHT: 16px; MARGIN: 5px 10px 2px; WIDTH: 120px; DISPLAY: inline; FLOAT: left; HEIGHT: 38px; COLOR: #fff; FONT-SIZE: 12px;cursor:pointer;border-bottom: 1px solid #fff;
-}
-.ulFocus LI SPAN {
-    Z-INDEX: 2; POSITION: relative; PADDING-BOTTOM: 6px; WIDTH: 100%; DISPLAY: block; HEIGHT: 32px; CURSOR: pointer;
-}
-.focusM {
-    MARGIN-TOP: 6px; WIDTH: 1060px; FLOAT: left; HEIGHT: 500px; OVERFLOW: hidden
-}
-.ulFCon {
-    WIDTH: 100%; FLOAT: left
-}
-.ulFCon LI {
-    WIDTH: 100%; FLOAT: left; HEIGHT: 500px; OVERFLOW: hidden
-}
-.ulFCon LI A {
-    WIDTH: 100%; DISPLAY: block; HEIGHT: 100%; TEXT-DECORATION: none
-}
-.ulFCon LI IMG {
-    BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; WIDTH: 1060px; height: 500px;  BORDER-TOP: medium none; BORDER-RIGHT: medium none
-}
-.back {
-    Z-INDEX: 1; POSITION: relative; WIDTH: 166px;no-repeat left top; HEIGHT: 47px; TOP: 0px; LEFT: 0px;background-color: #ba281e;
-}
-
-</style>
-
-    <script type="text/javascript" src="<?php echo base_url()?>/js/jq1.4.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/js/jquery.focus.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#j_Focus").Focus();
-        });
-    </script>
-    <div class="content">
-
-<div class="focusWrap">
-    <div id="j_Focus" class="focusCon">
-        <div class="focusL">
-            <div style="background-color: white"><span>上</span></div>
-            <ul id="j_FocusNav" class="ulFocus">
-
+<div class="content">
+    <div class="video_listbox">
+        <div class="video_l">
+            <div class="video_arr_u"></div>
+            <div class="video_nav">
+                <ul class="video_ul">
                 <?php foreach ($list as $k=>$v):?>
-            <li rel="<?php echo $k?>" id="vi<?php echo $v['id']?>" onclick="video('<?php echo $v['url'];?>',<?php echo  $v['id']?>)"><?php echo $v['name']?></li>
-
+                    <li id="vi<?php echo $v['id']?>" onclick="video('<?php echo $v['url'];?>',<?php echo  $v['id']?>)"><?php echo $v['name']?><?php echo $v['name']?></li>
                 <?php endforeach;?>
-                <li rel="4">aaaaa</li>
-                <li rel="5">aaaaa</li>
-                <li rel="6">aaaaa</li>
-                <li rel="7">aaaaa</li>
-                <li rel="8">aaaaa</li>
-                <li rel="9">aaaaa</li>
-                <li rel="10">aaaaa</li>
-                <li rel="11">aaaaa</li>
-                <li rel="12">aaaaa</li>
-            </ul>
-            <!-- <div id="j_FocusBack" class="back"></div> -->
-            <div style="background-color: white" onclick="downpage()"><span>下</span></div>
+                    <li>22222</li>
+                    <li>3333</li>
+                    <li>4444</li>
+                    <li>55555</li>
+                    <li>66666</li>
+                    <li>77777</li>
+                    <li>8888</li>
+                    <li>99999</li>
+                    <li>10</li>
+                    <li>11</li>
+                </ul>
+            </div>
+            <div class="video_arr_d"></div>
         </div>
-        <div class="focusM">
-            <ul id="j_FocusCon" class="ulFCon" >
-            <li>
-                <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
-            </embed>
-            </li>
-            </ul>
+        <div class="video_r">
+            <embed src="<?php echo $list[0]['url']?>" allowFullScreen="true" id='jls_video' quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">
         </div>
+    </div>
+    <div class="clear"></div>
+    <div class="video_teambox mt50">
+    	<h2>战队对战表</h2>
+    	<div>
+    		<p>6月30日18:00</p>
+    		<p>级联赛2016 S2夏季赛</p>
+    		<table>
+    			<tr>
+    				<td><img src=""></td>
+    				<td>VS</td>
+    				<td><img src=""></td>
+    			</tr>
+    			<tr>
+    				<td>sdk战队</td>
+    				<td></td>
+    				<td>DKY战队</td>
+    			</tr>
+    			<tr>
+    				<td>0</td>
+    				<td><a href="javascript:;">战报</a></td>
+    				<td>0</td>
+    			</tr>
+    		</table>
+    		<p>街头篮球 小组赛</p>
+    	</div>
     </div>
 </div>
-
-    </div>
-
-
 <script type="text/javascript">
+var mt = 0;
+var num = Math.ceil($(".video_ul>li").length / 5 -1);
+if (num >= 1) {
+    $(".video_arr_u").on("click",function(){
+        if (mt < 0) {
+            mt += 500;
+            $(".video_ul").animate({"margin-top": mt +"px"});
+        }
+    })
+    $(".video_arr_d").on("click",function(){
+        if (mt > -500*num) {
+            mt -= 500;
+            $(".video_ul").animate({"margin-top": mt +"px"});
+        }
+    })
+}
+
+    // function video(u,id){
+    // $('#jls_video').attr('src',u);
+    //     $('#j_FocusNav li').attr('class','');
+    // $('#vi'+id).attr('class','back');
+    // }
     function video(u,id){
-    $('#jls_video').attr('src',u);
-        $('#j_FocusNav li').attr('class','');
-    $('#vi'+id).attr('class','back');
+        var str = '<embed src="'+u+'" allowFullScreen="true" id="jls_video" quality="high" width="100%" height="100%" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash">'
+        $(".video_r").html(str);
     }
-
-
-
-
 </script>

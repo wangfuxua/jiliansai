@@ -43,19 +43,53 @@ class ItemModel extends CommonModel{
      * 添加报名队伍的联系人信息
      * */
     function AddGame1($data){
+        $uid=Yii::app()->user->id;
+         $sql="select id from `jls_teams` where uid='{$uid}' and `game_id`={$data['gameid']}";
+       $r=Yii::app()->db->createCommand($sql)->queryScalar();
+        if($r){
+            return $r;
+        }
         $a['uid']=Yii::app()->user->id;
         $a['phone']=$data['phone'];
         $a['name']=$data['name'];
+        $a['game_id']=$data['gameid'];
         $a['timeline']=time();
-        return  $this->addData('jls_teams',$a);
+          $this->addData('jls_teams',$a);
+        return Yii::app()->db->getLastInsertID();
     }
     /*
      * 根据游戏id'id获取itemid
      * */
     function GetItemid($gameid){
         if (!$gameid) return 0;
-        $sql="selct item_id from `jls_games` where id=:id";
+        $sql="select item_id from `jls_games` where id=:id";
         return Yii::app()->db->createCommand($sql)->bindParam(':id',$gameid)->queryScalar();
     }
+    /*
+     * 根据gameid  获取报名的信息
+     * */
+    function GetPtBygame($gameid,$uid=0){
+            if(!$uid){
+                $uid=Yii::app()->user->id;
+            }
+        $sql="select * from `jls_teams` where game_id={$gameid} and uid='{$uid}'";
+        return Yii::app()->db->createCommand($sql)->queryRow();
+    }
+    /*
+     * 获取队伍的队员信息
+     * */
+    function GetTinfiBytid($tid){
+        if(!$tid) return 0;
+        $sql="select * from `jls_team_info` where tid={$tid}";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+    /*
+     * 通过gameid  获取比赛的信息以及需要验证的信息
+     * */
+        function GetGameinfo($gameid){
+            $sql="select * from  `jls_games`  where id={$gameid}";
+            return Yii::app()->db->createCommand($sql)->queryRow();
+        }
+
 }
 ?>

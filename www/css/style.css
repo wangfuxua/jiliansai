@@ -279,7 +279,6 @@ z-index: 990;
 
 .video_teambox{background: rgba(50,50,50,0.53); width: 1200px; }
 
-
 /*报名*/
 .sign_stepbox{height: 60px; margin: 50px auto 0 auto;text-align: center;width: 980px;    
     background: url(../img/index/index_line1.png) center center no-repeat;
@@ -318,16 +317,3 @@ z-index: 990;
 .sign_team li{width:90px;height: 50px;line-height: 44px;text-align: center; border:3px solid #333;margin-bottom: 20px;cursor: pointer;}
 .sign_team li.sign_active{ background: #fff; color: #333;border-color: #aaa;}
 .sign_infobox li{display: none;}
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -7,9 +7,7 @@
     <meta name="description" content="" />
     <link href="<?php echo base_url()?>/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url()?>/css/style.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="<?php echo base_url()?>/css/idangerous.swiper.css">
     <script type="text/javascript" src="<?php echo base_url()?>/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>/js/idangerous.swiper.min.js"></script>
 </head>
 <body class="bg_1">
 <div class="nav">
@@ -27,12 +25,12 @@
                 <a href="<?php echo base_url('/users/regview');?>">注册</a>
             <?php endif;?>
         </div>
+        <ul class="nav_ul">
+            <li><a href="<?php echo base_url()?>">首页</a></li>
+            <li><a href="<?php echo base_url('video/video');?>">线上直播</a></li>
+            <li><a href="">报名</a></li>
+        </ul>
     </div>
-    <ul class="nav_ul">
-        <li><a href="<?php echo base_url()?>">首页</a></li>
-        <li><a href="<?php echo base_url('video/video');?>">线上直播</a></li>
-        <li><a href="">报名</a></li>
-    </ul>
 </div>
 
 <?php echo $content?>
@@ -47,24 +45,7 @@
 </div>
 
 <script type="text/javascript">
-    var mySwiper = new Swiper('.swiper-container',{
-        // pagination: '.pagination',
-        // paginationClickable: true,
-        loop:true,
-        autoplay:3000
-    })
-    function setBnH () {
-        var bn_h = $(window).width()*320/1200;
-        $(".home_bn").css({
-            "height":bn_h
-        })
-    }
-    $(function(){
-        setBnH ();
-    })
-    $(window).resize(function(){
-        setBnH ();
-    })
+
 </script>
 </body>
 </html>
