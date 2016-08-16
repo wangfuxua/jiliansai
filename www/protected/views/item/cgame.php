@@ -13,6 +13,7 @@
             <div class="sign_tit">填写基本信息</div>
             <form class="" action="" method="post" id="form1">
                 <input type="hidden" value="<?php echo $tid?>" name="tid">
+                <input type="hidden" value="<?php echo $gameid?>" name="gameid">
                 <div class="sign_row">
                     <span class="sign_tit2">战队名称</span>
                     <input class="sign_ipt1" name="tname" value="<?php echo isset($tname)?$tname:'';?>" type="text">

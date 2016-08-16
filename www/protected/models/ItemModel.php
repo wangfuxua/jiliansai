@@ -90,6 +90,35 @@ class ItemModel extends CommonModel{
             $sql="select * from  `jls_games`  where id={$gameid}";
             return Yii::app()->db->createCommand($sql)->queryRow();
         }
+    /*
+     * 更新队伍信息
+     * */
+    function Upteam($data){
+            $da['tname']=$data['tname'];
+            $da['logo']=$data['logo'];
+            $da['descript']=$data['descript'];
+            $da1['id']=$data['tid'];
+       return  $this->setData('jls_teams',$da,$da1);
+    }
+    /*
+     * 添加或者更新队伍队员信息
+     * */
+        function addteaminfo($data){
+               return  $this->addData('jls_team_info',$data);
+        }
+        /*
+         * 更新队员信息
+         * */
+    function Upteaminfo($data,$w){
+        return $this->setData('jls_team_info',$data,$w);
+    }
 
+    /*
+     * 判断队员是否存在
+     * */
+    function Checktinfo($tid,$num){
+        $sql="select id from jls_team_info where `tid`={$tid} and `number`={$num}";
+        return Yii::app()->db->createCommand($sql)->queryScalar();
+    }
 }
 ?>

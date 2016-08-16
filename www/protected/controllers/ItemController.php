@@ -56,8 +56,8 @@ class ItemController extends CommonController{
         $m=new ItemModel();
         $data['gameid']=$gameid= Yii::app()->request->getParam('gameid');
         $data['uid']= $uid=Yii::app()->user->id;
-            $data['name']=$name= Yii::app()->request->getParam('name');
-        $data['phone']=$phone= Yii::app()->request->getParam('phone');
+            $data['lname']=$name= Yii::app()->request->getParam('name');
+        $data['tphone']=$phone= Yii::app()->request->getParam('phone');
       $vercode= Yii::app()->request->getParam('vercode');
         $imgcode= Yii::app()->request->getParam('imgcode');
         $itemid=$m->GetItemid($gameid);
@@ -68,8 +68,8 @@ class ItemController extends CommonController{
        $r= $m->AddGame1($data);
         if($r){
             $data['tid']=$r;
-            $data['tinfo']=$m->GetGameinfo($r);
-
+            $data['tinfo']=$m->GetGameinfo($gameid);
+//            var_dump($data);die;
             $this->render('cgame',$data);
         }else{
             $this->redirect('/item/bgame/itemid/'.$itemid.'/gameid/'.$gameid.'/errmsg/提交的数据不完整');
@@ -82,14 +82,40 @@ class ItemController extends CommonController{
     function actionTjgame1(){
         $m=new ItemModel();
        $data=$_POST;
-        $data['tinfo']=$m->GetGameinfo($data['tid']);
+        $data['tinfo']=$m->GetGameinfo($data['gameid']);
         $this->render('cgame',$data);
     }
     /*
      * 提交完整信息  跳转页面
      * */
     function actionTjgame2(){
-        var_dump($_POST);
+        $m=new ItemModel();
+        $data=$_POST;
+        $data['tinfo']=$m->GetGameinfo($data['gameid']);
+        $num=0;
+        foreach($data['name'] as $k=>$v){
+            $tinf['name']=$v;
+            $tinf['number']=$k;
+            $tinf['qq']=$data['qq'][$k];
+            $tinf['phone']=$data['phone'][$k];
+            $tinf['phone']=$data['tid'];
+            $tinf['idtype']=$data['idtype'][$k];
+            $tinf['idcard']=$data['idcard'][$k];
+            $r=$m->Checktinfo($data['tid'],$k);
+            if($r){
+                $tw['id']=$r;
+              $rz=  $m->Upteaminfo($tinf,$tw);
+
+            }else{
+               $rz= $m->addteaminfo($tinf);
+
+            }
+        }
+//        echo $num;die;
+
+            $this->redirect('/index/index/errmsg/更新信息成功');die;
+
+
     }
 
 
