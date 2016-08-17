@@ -1,3 +1,10 @@
+<script>
+    var base_url="<?php echo base_url();?>";
+</script>
+<script language="javascript" src="<?php echo base_url("js/common.js") ?>"></script>
+<script language="javascript" src="<?php echo base_url("js/jquery/jquery.uploadifive.min.js") ?>"></script>
+<script language="javascript" src="<?php echo base_url("js/jquery/jquery.uploadify.min.js") ?>"></script>
+<script language="javascript" src="<?php echo base_url("js/upload.js") ?>"></script>
 
     <div style="height:115px;"></div>
 
@@ -14,6 +21,7 @@
             <form class="" action="" method="post" id="form1">
                 <input type="hidden" value="<?php echo $tid?>" name="tid">
                 <input type="hidden" value="<?php echo $gameid?>" name="gameid">
+                <input type="hidden" value="" name="logo" id="logo">
                 <div class="sign_row">
                     <span class="sign_tit2">战队名称</span>
                     <input class="sign_ipt1" name="tname" value="<?php echo isset($tname)?$tname:'';?>" type="text">
@@ -21,15 +29,16 @@
                 <div class="sign_row mt20">
                     <span class="sign_tit2">战队LOGO</span>
                     <div class="sign_rightbox">
-                        <input class="sign_ipt2" type="file">
-                        <div>上传</div>
+                         <span><img src="<?php echo base_url() ?>0" id="header_photo" width="106px" height="auto"   onerror="this.src='<?php echo base_url() ?>img/usertx.png'"></span>
+                        <input class="sign_ipt2"  value=""  id="btn_header3" type="file">
+
                     </div>
                 </div>
                 <div class="sign_row mt20">
                     <span class="sign_tit2">战队简介</span>
                     <textarea class="sign_area vam" name="descript" placeholder="战队简介"><?php echo isset($descript)?$descript:'';?></textarea>
                 </div>
-                
+
                 <div class="sign_teambox">
                     <ul class="fl sign_team">
                         <li id="member1" onclick="showteam(1)" class="sign_active">队长</li>
@@ -119,3 +128,12 @@
             $('#form1').submit();
         }
     </script>
+    <script>
+        $('.sign_rightbox1').append('上传LOGO');
+    </script>
+
+<style>
+    .sign_rightbox1{
+        background-color: orange;
+    }
+</style>
