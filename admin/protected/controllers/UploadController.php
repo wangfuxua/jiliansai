@@ -85,11 +85,12 @@ class UploadController extends CController {
 //        var_dump($_FILES);die;
         $t['y'] = date('y', time());
         $t['m'] = date('m', time());
-        $path = 'attachment/jls/' . $t['y'] . '/' . $t['m'];
+        $path ='attachment/jls/' . $t['y'] . '/' . $t['m'];
+//        var_dump($path);die;
 //        $path= Yii::app()->basePath.'/../../www/'.$path;
         $tool = new toolkit();
         $tool->createFolder($path);
-
+//        echo 111;die;
         $action = Yii::app()->request->getParam('act'); //删除群组头像
         if ($action == 'delimg') {
             $filename = $_POST['imagename'];
@@ -119,7 +120,10 @@ class UploadController extends CController {
                 $pics = date("YmdHis") . $rand . $type; //命名图片名称 
                 $pic = date("YmdHis") . $rand; //命名图片名称 
                 $pic_path = $path . "/" . $pics; //上传路径
-                move_uploaded_file($_FILES['btn_header']['tmp_name'], $pic_path);
+//                echo 1111;die;
+//                var_dump($pic_path);die;
+                move_uploaded_file($_FILES['btn_header']['tmp_name'],  Yii::app()->basePath.'/../'.$pic_path);
+               // echo 1111;die;
                 // 保存到头像目录，以及分别生成对应尺寸的头像
                 //require_once('./plugins/thumbHandler.php');
                 //include_once(dirname(dirname(__FILE__))."/library/thumbhandler.php");

@@ -13,7 +13,7 @@
         <div class="pagination"></div>
     </div>
     <div class="home_con1">
-        <div class="content" style="padding: 50px 0;">
+        <div class="home_content" style="padding: 50px 0;">
             <div class="home_d1 fl">
                 <!-- <h2 class="home_tit1">新闻中心</h2> -->
                 <div class="home_tab_box">
@@ -115,13 +115,12 @@
                     <?php if($adv1['status']==1):?>
                         <?php if($adv1['type']==1):?>
                             <a href="<?php echo $adv1['url']?>">
-
-                                <?php else:?>
-                                    <a href="#">
+						<?php else:?>
+                            <a href="#">
                         <?php endif;?>
-                    <img width="440" height="278" src="<?php echo ADMIMG.$adv1['img']?>">
+                    			<!-- <img class="w100" src="<?php echo ADMIMG.$adv1['img']?>"> -->
+                    			<img class="w100" src="http://mgy.jileague.com/attachment/jls/16/08/20160802103401824.jpg">
                             </a>
-
                     <?php endif;?>
                 </div>
                 <div >
@@ -133,7 +132,8 @@
                         <?php else:?>
                         <a href="#">
                             <?php endif;?>
-                    <img width="440" height="278" src="<?php echo ADMIMG.$adv2['img']?>">
+                    <!-- <img class="w100" src="<?php echo ADMIMG.$adv2['img']?>"> -->
+                    <img class="w100" src="http://mgy.jileague.com/attachment/jls/16/08/20160802103401824.jpg">
                         </a>
                     <?php endif;?>
                 </div>
@@ -143,7 +143,7 @@
     </div>
     <div class="home_line2"></div>
     <div class="home_con2">
-        <div class="content">
+        <div class="home_content">
             <div class="home_hotbox">
                 <h2 class="home_tit3">热门视频</h2>
                 <ul class="home_hot_tit">
@@ -151,15 +151,6 @@
                     <li id="hottit<?php echo $k+1?>"><?php echo $v['name']?></li>
                     <?php endforeach;?>
                 </ul>
-                <script type="text/javascript">
-                    $(".home_hot_tit li").on("click",function(){
-                        var num = $(this).attr("id").replace("hottit","")
-                        $("#hotarr").attr("class","home_hot_arr"+num);
-                        $("ul.home_hot_conul").hide();
-                        $("ul#hot_conul"+num).show();
-
-                    })
-                </script>
                 <div class="home_hot_con">
                     <div id="hotarr" class="home_hot_arr1"></div>
 
@@ -169,7 +160,7 @@
                         <?php foreach($v as $val):?>
                         <?php if(!empty($val)):?>
                         <li>
-                            <img src="<?php echo ADMIMG.$val['logo']?>" width="250" height="145">
+                            <img src="<?php echo ADMIMG.$val['logo']?>" class="w100">
                             <p class="tac fsz16 mt10 c_f"><?PHP ECHO $val['name']?></p>
                         </li>
                         <?php endif;?>
@@ -249,6 +240,17 @@
     </div>
     
     <script type="text/javascript">
+        $(window).load(function(){
+            setNewsHight(40,106,6);
+        })
+        
+        $(".home_hot_tit li").on("click",function(){
+            var num = $(this).attr("id").replace("hottit","")
+            $("#hotarr").attr("class","home_hot_arr"+num);
+            $("ul.home_hot_conul").hide();
+            $("ul#hot_conul"+num).show();
+
+        })
 
         $("#zxzx_btn .sel").on("click",function(){
             var _index=$(this).index();
@@ -272,6 +274,19 @@
         var bn_h = $(window).width()*700/1920;
         $(".home_bn").css({
             "height":bn_h
+        })
+        setNewsHight(40,106,6)
+    }
+    function setNewsHight(line_h,newsimg_h,news_num) {
+    	var d2_h = $(".home_d2").height();
+    	var pd = (d2_h - 75  - (line_h * (news_num-1)) - (newsimg_h * news_num)) / (news_num*2);
+
+    	$(".home_column").css({
+            "padding-top":pd,
+            "padding-bottom":pd
+        })
+    	$(".zxzx_content").css({
+            "height":d2_h-60,
         })
     }
     $(function(){
