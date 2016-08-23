@@ -40,6 +40,9 @@ class ChannelCOntroller  extends CommonController{
      * */
     function actionGoAddCh(){
         $data=$_POST;
+        if(empty($data)){
+            $this->redirect('/channel/addChannel');die;
+        }
         unset($data['btn_header3']);
 //        var_dump($data);die;
         $ch=new ChannelModel();

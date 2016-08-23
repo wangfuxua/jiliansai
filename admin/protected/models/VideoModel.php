@@ -57,7 +57,7 @@ class VideoModel extends CommonModel{
         }
 
         $v['timeline']=time();
-        $v['status']=$data['status'];
+        $v['status']=isset($data['status'])?$data['status']:0;
         $v['type']=isset($data['type'])?implode(',',$data['type']):0;
     
         return  $this->setData('jls_videos',$v,$array);

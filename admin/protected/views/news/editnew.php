@@ -78,6 +78,7 @@
                     <?php if(isset($_GET['error']) && $_GET['error']==1){echo "<span style='color: red'>您输入的信息不完整,请重新输入</span>";}?>
                     <hr />
                     <form class="form-horizontal" id='myform' action='<?php echo base_url('news/GoAddnew')  ?>' method='post'  >
+                        <input type="hidden" value="<?php echo $info['id']?>" name="id">
                         <input type="hidden" value="" name="logo" id="logo">
                         <div class="control-group">
                             <label class="control-label">所属栏目：</label>

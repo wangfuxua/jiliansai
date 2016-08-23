@@ -38,11 +38,20 @@ class NewsModel extends CommonModel{
      * 添加新闻
      * */
     function Addnews($data){
+        foreach($data as $k=>$v){
+            $data[$k]=isset($data[$k])?$data[$k]:'';
+        }
+
         $new=new Dtable('news');
+        if(isset($data['id'])){
+            $new= $new->findByPk($data['id']);
+        $new->isNewRecord=false;
+        }
+
         $new->title=$data['title'];
         $new->desc=$data['desc'];
         $new->cln_id=$data['cln_id'];
-        $new->text=$data['text'];
+        $new->text=isset($data['text'])?$data['text']:'';
         $new->timeline=time();
         return $new->save();
     }
