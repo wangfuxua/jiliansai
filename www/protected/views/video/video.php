@@ -26,6 +26,7 @@
         </div>
     </div>
     <div class="clear"></div>
+   <?php if(0):?>
     <div class="video_teambox mt50">
     	<h2>战队对战表</h2>
     	<div>
@@ -51,6 +52,7 @@
     		<p>街头篮球 小组赛</p>
     	</div>
     </div>
+    <?php endif;?>
 </div>
 <script type="text/javascript">
 var mt = 0;

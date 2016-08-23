@@ -8,6 +8,7 @@
     <link href="<?php echo base_url()?>/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url()?>/css/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="<?php echo base_url()?>/js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>/js/common1.js"></script>
 </head>
 <body class="bg_1">
 <div class="nav">
@@ -29,8 +30,8 @@
             <li><a href="<?php echo base_url()?>">官网首页</a></li>
             <li><a href="<?php echo base_url('item/')?>">快速报名</a></li>
             <li><a href="<?php echo base_url('video/video');?>">赛事直播</a></li>
-            <li><a href="javascript:;">新闻中心</a></li>
-            <li><a href="javascript:;">商务合作</a></li>
+            <li><a href="?errmsg=正在开发中">新闻中心</a></li>
+            <li><a href="?errmsg=正在开发中">商务合作</a></li>
         </ul>
     </div>
 </div>
@@ -63,5 +64,12 @@
     // $(window).resize(function(){
     //     setLogoMr();
     // })
+
+
+    var err="<?php echo isset($_GET['errmsg'])?$_GET['errmsg']:''?>";
+    if(err){
+        popAlert(err);
+    }
+</script>
 </script>
 </html>

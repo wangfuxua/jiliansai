@@ -57,7 +57,7 @@ class ItemController extends CommonController{
         $data['gameid']=$gameid= Yii::app()->request->getParam('gameid');
         $data['uid']= $uid=Yii::app()->user->id;
             $data['lname']=$name= Yii::app()->request->getParam('name');
-        $data['tphone']=$phone= Yii::app()->request->getParam('phone');
+        $data['phone']=$phone= Yii::app()->request->getParam('phone');
       $vercode= Yii::app()->request->getParam('vercode');
         $imgcode= Yii::app()->request->getParam('imgcode');
         $itemid=$m->GetItemid($gameid);
@@ -67,6 +67,8 @@ class ItemController extends CommonController{
 //var_dump($data);die;
        $r= $m->AddGame1($data);
         if($r){
+            $data['tphone']= $data['phone'];
+            unset($data['phone']);
             $data['tid']=$r;
             $data['tinfo']=$m->GetGameinfo($gameid);
 //            var_dump($data);die;
@@ -89,6 +91,7 @@ class ItemController extends CommonController{
      * 提交完整信息  跳转页面
      * */
     function actionTjgame2(){
+        try{
         $m=new ItemModel();
         $data=$_POST;
         $data['tinfo']=$m->GetGameinfo($data['gameid']);
@@ -112,8 +115,12 @@ class ItemController extends CommonController{
             }
         }
 //        echo $num;die;
-
             $this->redirect('/index/index/errmsg/更新信息成功');die;
+        }
+        catch (Exception $e){
+            $this->render('cgame',$data);die;
+//            $this->redirect('/index/index/errmsg/信息不完整或提交错误');die;
+        }
 
 
     }

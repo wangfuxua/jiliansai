@@ -39,6 +39,6 @@
 
 defined('DOMAIN') or define('DOMAIN', '');
 defined('ROOT') or define('ROOT', '.');
-defined('SITEURL') or define('SITEURL', 'https://www.maijinwang.com');
+defined('SITEURL') or define('SITEURL', 'https://www.jileague.com');
 //defined('SITEURL') or define('SITEURL', 'http://127.0.0.1:8081');
 /* End of file constants.php */

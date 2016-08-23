@@ -353,7 +353,7 @@ class Uploader
      */
     public function getFileInfo1()
     {
-        $ttt=str_replace('/../www/','https://www.maijinwang.com/',$this->fullName);
+        $ttt=str_replace('/../www/','https://www.jileague.com/',$this->fullName);
         return array(
             "state" => $this->stateInfo,
             "url" => $ttt,

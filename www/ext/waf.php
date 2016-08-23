@@ -57,7 +57,7 @@ function check($str,$v)
 		{
 			//W_log("<br>IP: ".$_SERVER["REMOTE_ADDR"]."<br>时间: ".strftime("%Y-%m-%d %H:%M:%S")."<br>页面:".$_SERVER["PHP_SELF"]."<br>提交方式: ".$_SERVER["REQUEST_METHOD"]."<br>提交数据: ".$str);
 			print "您的提交带有不合法参数,谢谢合作";
-			header("Location: https://www.maijinwang.com/site/paraerror"); 
+			header("Location: https://www.http://jileague.com?errmsg=参数不合法");
 			exit();
 		}
 	}

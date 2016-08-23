@@ -88,6 +88,9 @@ class UsersController extends CommonController{
           $password= Yii::app()->request->getParam('password');
           $phone= Yii::app()->request->getParam('phone');
           $m=new UsersModel();
+          if(!$m->CheckPhone($phone)){
+              $this->redirect('/users/Login/errmsg/尚未注册');
+          }
           $r=$m->Login($phone,$password);
           if(!$r){
               $this->redirect('/users/Login/errmsg/密码错误');

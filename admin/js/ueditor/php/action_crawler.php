@@ -27,7 +27,7 @@ if (isset($_POST[$fieldName])) {
 foreach ($source as $imgUrl) {
     $item = new Uploader($imgUrl, $config, "remote");
     $info = $item->getFileInfo();
-    $ttt=str_replace('/../www/','https://www.maijinwang.com/', $info["url"]);
+    $ttt=str_replace('/../www/','https://www.jileague.com/', $info["url"]);
     array_push($list, array(
         "state" => $info["state"],
         "url" => $ttt,

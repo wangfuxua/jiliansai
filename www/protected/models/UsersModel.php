@@ -101,5 +101,12 @@ class UsersModel extends CommonModel{
         return Yii::app()->db->createCommand($sql)->execute();
     }
 
+    /*
+     * 判断用户是否注册
+     * */
+    function CheckPhone($phone){
+            $sql="select id from `jls_users` where phone='{$phone}'";
+        return Yii::app()->db->createCommand($sql)->queryScalar();
+    }
 
 }
