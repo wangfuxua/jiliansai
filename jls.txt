@@ -1,0 +1,4 @@
+101.200.82.5
+root
+zhouti950225!@#
+mysql:  wangfuxu  123456
